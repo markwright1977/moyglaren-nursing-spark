@@ -3,9 +3,34 @@ import { MapPin, Phone, Mail, Clock, PhoneCall } from "lucide-react";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import entranceImage from "@/assets/entrance-large.jpg";
+import { useState } from "react";
 
 const Contact = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const subject = `Visit Request from ${formData.firstName} ${formData.lastName}`;
+    const body = `Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Message:
+${formData.message}`;
+    
+    window.location.href = `mailto:info@moyglare.ie?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
   return (
     <section id="contact" className="py-section md:py-section-lg bg-[hsl(var(--pale-sage))]">
@@ -149,7 +174,7 @@ const Contact = () => {
                 Fill out the form below and we'll be in touch to arrange a time that suits you.
               </p>
               
-              <form className="space-y-5">
+              <form className="space-y-5" onSubmit={handleSubmit}>
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
@@ -159,6 +184,8 @@ const Contact = () => {
                       type="text"
                       id="firstName"
                       name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
                       aria-label="Your first name"
                       className="w-full px-4 py-3 min-h-[44px] rounded-lg border border-border bg-[hsl(var(--off-white))] text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
                       placeholder="John"
@@ -172,6 +199,8 @@ const Contact = () => {
                       type="text"
                       id="lastName"
                       name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
                       aria-label="Your last name"
                       className="w-full px-4 py-3 min-h-[44px] rounded-lg border border-border bg-[hsl(var(--off-white))] text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
                       placeholder="Murphy"
@@ -187,6 +216,8 @@ const Contact = () => {
                     type="email"
                     id="email"
                     name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     aria-label="Your email address"
                     className="w-full px-4 py-3 min-h-[44px] rounded-lg border border-border bg-[hsl(var(--off-white))] text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
                     placeholder="john@example.com"
@@ -201,6 +232,8 @@ const Contact = () => {
                     type="tel"
                     id="phone"
                     name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
                     aria-label="Your phone number"
                     className="w-full px-4 py-3 min-h-[44px] rounded-lg border border-border bg-[hsl(var(--off-white))] text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
                     placeholder="+353 1 234 5678"
@@ -215,6 +248,8 @@ const Contact = () => {
                     id="message"
                     name="message"
                     rows={4}
+                    value={formData.message}
+                    onChange={handleChange}
                     aria-label="Your message"
                     className="w-full px-4 py-3 min-h-[120px] rounded-lg border border-border bg-[hsl(var(--off-white))] text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all resize-none"
                     placeholder="Tell us about your enquiry..."
