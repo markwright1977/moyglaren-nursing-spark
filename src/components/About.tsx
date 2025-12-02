@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import careDiningImage from "@/assets/care-dining.jpg";
+import entranceImage from "@/assets/entrance-main.jpg";
 
 const About = () => {
   const highlights = [
@@ -19,8 +19,8 @@ const About = () => {
           <div className="relative order-2 lg:order-1">
             <div className="relative rounded-2xl overflow-hidden shadow-elevated">
               <img
-                src={careDiningImage}
-                alt="Caring staff member assisting resident at mealtime"
+                src={entranceImage}
+                alt="Moyglare Nursing Home building and grounds"
                 className="w-full aspect-[4/3] object-cover"
               />
             </div>
