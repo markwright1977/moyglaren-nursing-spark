@@ -1,20 +1,33 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import logo from "@/assets/moyglare-logo-new.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navLinks = [
+  const mainNavLinks = [
     { href: "#about", label: "About Us" },
     { href: "#services", label: "Services" },
     { href: "#amenities", label: "Amenities" },
-    { href: "#gallery", label: "Gallery" },
-    { href: "#community", label: "Community" },
     { href: "#testimonials", label: "Testimonials" },
     { href: "#contact", label: "Contact" },
   ];
+
+  const moreNavLinks = [
+    { href: "#gallery", label: "Gallery" },
+    { href: "#community", label: "Community" },
+    { href: "#team", label: "Our Team" },
+    { href: "#faq", label: "FAQ" },
+  ];
+
+  const allNavLinks = [...mainNavLinks.slice(0, 3), ...moreNavLinks, ...mainNavLinks.slice(3)];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
@@ -30,8 +43,8 @@ const Header = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center justify-center flex-1 mx-8 gap-6 xl:gap-10">
-            {navLinks.map((link) => (
+          <nav className="hidden lg:flex items-center gap-8">
+            {mainNavLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -40,6 +53,26 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
+            
+            {/* More Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-base font-medium text-foreground hover:text-primary transition-colors duration-200">
+                More
+                <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="bg-background border border-border shadow-lg z-50">
+                {moreNavLinks.map((link) => (
+                  <DropdownMenuItem key={link.href} asChild>
+                    <a
+                      href={link.href}
+                      className="w-full cursor-pointer text-foreground hover:text-primary"
+                    >
+                      {link.label}
+                    </a>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </nav>
 
           {/* CTA Button */}
@@ -71,7 +104,7 @@ const Header = () => {
         {isMenuOpen && (
           <nav className="lg:hidden py-6 border-t border-border/50 animate-fade-in">
             <div className="flex flex-col gap-2">
-              {navLinks.map((link) => (
+              {allNavLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
