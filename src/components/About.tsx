@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import entranceImage from "@/assets/entrance-main-sharp.jpg";
+import entranceImage from "@/assets/moyglare-entrance.webp";
 
 const About = () => {
   const highlights = [
