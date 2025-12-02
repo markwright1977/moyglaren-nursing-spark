@@ -77,14 +77,9 @@ const Gallery = () => {
               {/* Warm beige overlay on hover */}
               <div className="absolute inset-0 bg-gradient-to-t from-[hsl(50_20%_30%/0.7)] via-[hsl(50_20%_50%/0.2)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-4 left-4 right-4">
-                  <p className="text-white font-display text-lg">{image.title}</p>
-                  <p className="text-white/80 text-sm">{image.caption}</p>
+                  <p className="text-white font-display text-lg drop-shadow-md">{image.title}</p>
+                  <p className="text-white/90 text-sm drop-shadow-md">{image.caption}</p>
                 </div>
-              </div>
-              {/* Caption always visible below image */}
-              <div className="py-3 px-2 text-center bg-card">
-                <p className="text-foreground font-medium text-sm">{image.title}</p>
-                <p className="text-muted-foreground text-xs">{image.caption}</p>
               </div>
             </motion.div>
           ))}
