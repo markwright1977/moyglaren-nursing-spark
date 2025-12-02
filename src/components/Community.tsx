@@ -18,7 +18,7 @@ const communityPosts = [
     alt: "MPPS trad group performing traditional Irish music at Moyglare Nursing Home",
     title: "Traditional Music Visit",
     icon: Music,
-    text: "The MPPS trad group visited Moyglare Nursing Home today.",
+    text: "The Maynooth Post Primary School trad group visited Moyglare Nursing Home today.",
     tagline: "Bringing music and joy to our residents"
   }
 ];
