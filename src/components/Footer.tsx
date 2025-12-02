@@ -1,4 +1,5 @@
 import { Heart, Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/moyglare-logo-new.png";
 
 const Footer = () => {
@@ -113,9 +114,17 @@ const Footer = () => {
 
         {/* Divider */}
         <div className="border-t border-[hsl(var(--footer-text)/0.15)] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[hsl(var(--footer-text-muted))] text-sm">
-            © {new Date().getFullYear()} Moyglare Nursing Home. All rights reserved.
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+            <p className="text-[hsl(var(--footer-text-muted))] text-sm">
+              © {new Date().getFullYear()} Moyglare Nursing Home. All rights reserved.
+            </p>
+            <Link 
+              to="/privacy" 
+              className="text-[hsl(var(--footer-text-muted))] text-sm hover:text-[hsl(var(--footer-text))] transition-colors duration-200 underline underline-offset-2"
+            >
+              Privacy Policy
+            </Link>
+          </div>
           <p className="text-[hsl(var(--footer-text-muted))] text-sm flex items-center gap-1">
             Made with <Heart className="w-4 h-4 text-cta fill-cta" /> in Ireland
           </p>
