@@ -64,10 +64,10 @@ const Footer = () => {
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[hsl(var(--footer-text))] flex-shrink-0" />
                 <a 
-                  href="mailto:info@moyglarenursinghome.ie" 
+                  href="mailto:info@moyglare.ie" 
                   className="text-[hsl(var(--footer-text-muted))] text-sm hover:text-[hsl(var(--footer-text))] transition-colors duration-200 break-all"
                 >
-                  info@moyglarenursinghome.ie
+                  info@moyglare.ie
                 </a>
               </li>
             </ul>
