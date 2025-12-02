@@ -140,12 +140,12 @@ const Footer = () => {
                 Accessibility
               </Link>
               <span className="text-[hsl(var(--footer-text)/0.3)] hidden md:inline">|</span>
-              <a 
-                href="#contact" 
+              <Link 
+                to="/complaints" 
                 className="text-[hsl(var(--footer-text-muted))] hover:text-[hsl(var(--footer-text))] transition-colors duration-200"
               >
                 Complaints Procedure
-              </a>
+              </Link>
             </nav>
             <p className="text-[hsl(var(--footer-text-muted))] text-sm flex items-center gap-1">
               Made with <Heart className="w-4 h-4 text-cta fill-cta" /> in Ireland
