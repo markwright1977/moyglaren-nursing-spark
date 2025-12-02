@@ -1,4 +1,4 @@
-import { Heart, Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
+import { Heart, Phone, Mail, MapPin, Facebook, Instagram, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/moyglare-logo-new.png";
 
@@ -76,19 +76,22 @@ const Footer = () => {
           {/* Accreditation & Social */}
           <div>
             <h4 className="font-display font-semibold text-[hsl(var(--footer-text))] mb-5 text-lg">Accreditation</h4>
-            <p className="text-[hsl(var(--footer-text-muted))] text-sm mb-6 leading-relaxed">
-              <a 
-                href="https://www.hiqa.ie/areas-we-work/find-a-centre/moyglare-nursing-home" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:text-[hsl(var(--footer-text))] transition-colors duration-200 underline underline-offset-2"
-              >
-                HIQA Registered Nursing Home
-              </a><br />
-              Fully compliant with national standards
-            </p>
+            <ul className="text-[hsl(var(--footer-text-muted))] text-sm space-y-2 mb-4">
+              <li><strong className="text-[hsl(var(--footer-text))]">Registered Provider:</strong> Moyglare Nursing Home Ltd</li>
+              <li><strong className="text-[hsl(var(--footer-text))]">HIQA Registration No:</strong> 72</li>
+              <li><strong className="text-[hsl(var(--footer-text))]">Person in Charge:</strong> Ann Hughes</li>
+            </ul>
+            <a 
+              href="https://www.hiqa.ie/system/files?file=inspectionreports/72-moyglare-nursing-home-27-november-2024.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-[hsl(var(--footer-text-muted))] text-sm hover:text-[hsl(var(--footer-text))] transition-colors duration-200 underline underline-offset-2"
+            >
+              View our latest HIQA report
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
             
-            <h4 className="font-display font-semibold text-[hsl(var(--footer-text))] mb-3 text-lg">Follow Us</h4>
+            <h4 className="font-display font-semibold text-[hsl(var(--footer-text))] mt-6 mb-3 text-lg">Follow Us</h4>
             <div className="flex gap-3">
               <a 
                 href="https://facebook.com" 
@@ -113,20 +116,43 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-[hsl(var(--footer-text)/0.15)] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
-            <p className="text-[hsl(var(--footer-text-muted))] text-sm">
-              © {new Date().getFullYear()} Moyglare Nursing Home. All rights reserved.
+        <div className="border-t border-[hsl(var(--footer-text)/0.15)] pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
+            <nav className="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-2 text-sm">
+              <Link 
+                to="/privacy" 
+                className="text-[hsl(var(--footer-text-muted))] hover:text-[hsl(var(--footer-text))] transition-colors duration-200"
+              >
+                Privacy Policy
+              </Link>
+              <span className="text-[hsl(var(--footer-text)/0.3)] hidden md:inline">|</span>
+              <Link 
+                to="/privacy#cookies" 
+                className="text-[hsl(var(--footer-text-muted))] hover:text-[hsl(var(--footer-text))] transition-colors duration-200"
+              >
+                Cookies
+              </Link>
+              <span className="text-[hsl(var(--footer-text)/0.3)] hidden md:inline">|</span>
+              <Link 
+                to="/privacy" 
+                className="text-[hsl(var(--footer-text-muted))] hover:text-[hsl(var(--footer-text))] transition-colors duration-200"
+              >
+                Accessibility
+              </Link>
+              <span className="text-[hsl(var(--footer-text)/0.3)] hidden md:inline">|</span>
+              <a 
+                href="#contact" 
+                className="text-[hsl(var(--footer-text-muted))] hover:text-[hsl(var(--footer-text))] transition-colors duration-200"
+              >
+                Complaints Procedure
+              </a>
+            </nav>
+            <p className="text-[hsl(var(--footer-text-muted))] text-sm flex items-center gap-1">
+              Made with <Heart className="w-4 h-4 text-cta fill-cta" /> in Ireland
             </p>
-            <Link 
-              to="/privacy" 
-              className="text-[hsl(var(--footer-text-muted))] text-sm hover:text-[hsl(var(--footer-text))] transition-colors duration-200 underline underline-offset-2"
-            >
-              Privacy Policy
-            </Link>
           </div>
-          <p className="text-[hsl(var(--footer-text-muted))] text-sm flex items-center gap-1">
-            Made with <Heart className="w-4 h-4 text-cta fill-cta" /> in Ireland
+          <p className="text-[hsl(var(--footer-text-muted))] text-sm text-center md:text-left">
+            © {new Date().getFullYear()} Moyglare Nursing Home. All rights reserved.
           </p>
         </div>
       </div>
