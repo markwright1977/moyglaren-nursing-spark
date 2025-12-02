@@ -2,13 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
     /* Warm, nurturing color palette */
     --background: 40 33% 98%;
-    --foreground: 30 10% 20%;
+    --foreground: 0 0% 27%; /* #444444 - soft dark grey */
+    
+    /* Heading color - muted sage green from logo */
+    --heading: 100 17% 46%; /* #6E8B61 */
+    
+    /* CTA/Link colors - from heart in logo */
+    --cta: 0 60% 56%; /* #D14B4B */
+    --cta-hover: 0 60% 48%; /* #B93C3C */
 
     --card: 40 30% 97%;
     --card-foreground: 30 10% 20%;
@@ -122,22 +129,25 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'DM Sans', sans-serif;
-    line-height: 1.7;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.0625rem; /* 17px base */
+    line-height: 1.6;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Lora', serif;
-    @apply font-semibold tracking-tight;
+    @apply font-semibold;
+    letter-spacing: 0.5px;
     line-height: 1.2;
+    color: hsl(var(--heading));
   }
 
   h1 {
-    @apply font-bold;
+    @apply font-semibold;
   }
 
   p {
-    line-height: 1.8;
+    line-height: 1.6;
   }
 }
 
@@ -147,7 +157,7 @@
   }
 
   .font-sans {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
   }
 
   .gradient-hero {
