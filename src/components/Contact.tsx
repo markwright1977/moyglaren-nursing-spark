@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Mail, Clock, PhoneCall } from "lucide-react";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import entranceImage from "@/assets/entrance-main-sharp.jpg";
+import entranceImage from "@/assets/entrance-large.jpg";
 
 const Contact = () => {
   const { ref, isVisible } = useScrollAnimation();
