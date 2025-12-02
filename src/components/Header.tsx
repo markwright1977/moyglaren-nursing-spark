@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import {
@@ -12,6 +13,11 @@ import logo from "@/assets/moyglare-logo-new.png";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
+  // Helper to get the correct href for navigation links
+  const getNavHref = (hash: string) => isHomePage ? hash : `/${hash}`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,7 +57,7 @@ const Header = () => {
       <div className="container mx-auto">
         <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo */}
-          <a href="#" className={`flex items-center transition-all duration-300 ${
+          <a href={isHomePage ? "#" : "/"} className={`flex items-center transition-all duration-300 ${
             !isScrolled ? "bg-white/80 rounded-lg px-2 py-1 backdrop-blur-sm" : ""
           }`}>
             <img 
@@ -66,7 +72,7 @@ const Header = () => {
             {mainNavLinks.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={getNavHref(link.href)}
                 className={`text-base font-medium transition-all duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:transition-all after:duration-300 hover:after:w-full ${
                   isScrolled 
                     ? "text-foreground hover:text-primary after:bg-primary" 
@@ -91,7 +97,7 @@ const Header = () => {
                 {moreNavLinks.map((link) => (
                   <DropdownMenuItem key={link.href} asChild>
                     <a
-                      href={link.href}
+                      href={getNavHref(link.href)}
                       className="w-full cursor-pointer text-foreground hover:text-primary"
                     >
                       {link.label}
@@ -116,7 +122,7 @@ const Header = () => {
               <span className="hidden lg:inline">+353 1 628 9022</span>
             </a>
             <Button asChild>
-              <a href="#contact">Book a Visit</a>
+              <a href={getNavHref("#contact")}>Book a Visit</a>
             </Button>
           </div>
 
@@ -140,7 +146,7 @@ const Header = () => {
               {allNavLinks.map((link) => (
                 <a
                   key={link.href}
-                  href={link.href}
+                  href={getNavHref(link.href)}
                   className="text-base font-medium text-foreground hover:text-primary transition-colors px-4 py-3 rounded-lg hover:bg-pale-sage min-h-[44px] flex items-center"
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -157,7 +163,7 @@ const Header = () => {
                 </a>
                 <div className="px-4">
                   <Button className="w-full" asChild>
-                    <a href="#contact">Book a Visit</a>
+                    <a href={getNavHref("#contact")}>Book a Visit</a>
                   </Button>
                 </div>
               </div>
