@@ -85,10 +85,15 @@ ${formData.message}`;
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Address</h3>
-                  <p className="text-muted-foreground">
+                  <a 
+                    href="https://maps.app.goo.gl/3X3ZfjDLURNMxAK66" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-cta transition-colors"
+                  >
                     Moyglare Road, Maynooth,<br />
                     Co. Kildare, W23 HF82
-                  </p>
+                  </a>
                 </div>
               </div>
 
