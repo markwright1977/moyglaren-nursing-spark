@@ -1,7 +1,7 @@
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import entranceImage from "@/assets/moyglare-entrance.webp";
+import aboutImage from "@/assets/about-building.jpg";
 
 const About = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -29,8 +29,8 @@ const About = () => {
           >
             <div className="relative rounded-lg overflow-hidden shadow-elevated image-hover">
               <img
-                src={entranceImage}
-                alt="Moyglare Nursing Home building and landscaped grounds"
+                src={aboutImage}
+                alt="Moyglare Nursing Home building exterior with ivy-covered entrance and gardens"
                 className="w-full aspect-[4/3] object-cover"
               />
             </div>
