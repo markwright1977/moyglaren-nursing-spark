@@ -6,88 +6,95 @@
 
 @layer base {
   :root {
-    /* Warm, nurturing color palette */
-    --background: 40 33% 98%;
-    --foreground: 0 0% 20%; /* #333333 - darker grey for better readability */
+    /* Core brand colors - from Moyglare logo */
+    --primary: 100 17% 46%; /* #6E8B61 - Sage green */
+    --primary-foreground: 40 33% 98%;
     
-    /* Heading color - muted sage green from logo */
-    --heading: 100 17% 46%; /* #6E8B61 */
-    
-    /* CTA/Link colors - from heart in logo */
+    /* CTA/Accent red - from heart in logo */
     --cta: 0 60% 56%; /* #D14B4B */
     --cta-hover: 0 60% 48%; /* #B93C3C */
+    --terracotta: 0 60% 56%; /* Alias for CTA */
+    --terracotta-dark: 0 60% 48%;
+    
+    /* Backgrounds */
+    --background: 40 33% 98%;
+    --foreground: 0 0% 27%; /* #444444 - body text */
+    --heading: 100 17% 46%; /* #6E8B61 - heading color */
+    
+    /* Sectional backgrounds */
+    --off-white: 50 20% 97%; /* #FAFAF7 */
+    --pale-sage: 90 15% 94%; /* #EFF2ED */
+    --divider: 90 12% 89%; /* #E1E6E0 */
+    
+    /* Footer */
+    --footer-green: 100 17% 46%; /* #6E8B61 */
+    --footer-text: 40 33% 98%;
+    --footer-text-muted: 40 20% 85%;
 
-    --card: 40 30% 97%;
-    --card-foreground: 30 10% 20%;
+    /* Cards */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 27%;
 
-    --popover: 40 30% 97%;
-    --popover-foreground: 30 10% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 27%;
 
-    /* Sage green - trust, nature, healing */
-    --primary: 145 25% 36%;
-    --primary-foreground: 40 33% 98%;
-
-    /* Warm cream secondary */
+    /* Secondary */
     --secondary: 35 40% 92%;
-    --secondary-foreground: 30 10% 25%;
+    --secondary-foreground: 0 0% 27%;
 
+    /* Muted */
     --muted: 35 20% 93%;
-    --muted-foreground: 30 10% 35%;
+    --muted-foreground: 0 0% 40%;
 
-    /* Soft terracotta accent */
+    /* Accent */
     --accent: 20 45% 65%;
     --accent-foreground: 40 33% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 40 33% 98%;
 
+    /* Borders & Inputs */
     --border: 35 20% 88%;
     --input: 35 20% 88%;
-    --ring: 145 25% 36%;
+    --ring: 100 17% 46%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem; /* 8px base radius */
 
-    /* Custom nursing home tokens */
-    --sage: 145 25% 36%;
-    --sage-light: 145 30% 92%;
-    --sage-dark: 145 25% 28%;
+    /* Sage variants */
+    --sage: 100 17% 46%;
+    --sage-light: 90 15% 94%;
+    --sage-dark: 100 17% 36%;
+    
+    /* Cream variants */
     --cream: 40 33% 97%;
     --cream-dark: 35 25% 90%;
-    --terracotta: 20 45% 65%;
-    --terracotta-light: 20 50% 90%;
-    --warm-gray: 30 10% 45%;
-    
-    /* Sectional backgrounds */
-    --off-white: 60 14% 97%; /* #FAFAF7 */
-    --pale-sage: 90 15% 94%; /* #EFF2ED */
-    --footer-green: 100 17% 46%; /* #6E8B61 */
-    --footer-text: 40 33% 98%;
-    --footer-text-muted: 40 20% 85%;
     
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(145 25% 36% / 0.5), hsl(145 25% 28% / 0.6));
+    --gradient-hero: linear-gradient(135deg, hsl(100 17% 46% / 0.55), hsl(100 17% 36% / 0.65));
     --gradient-warm: linear-gradient(180deg, hsl(40 33% 98%), hsl(35 25% 94%));
-    --gradient-card: linear-gradient(145deg, hsl(40 30% 99%), hsl(35 25% 96%));
-    --gradient-section: linear-gradient(180deg, hsl(35 40% 92% / 0.3) 0%, hsl(40 33% 98%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(35 25% 98%));
     
-    /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(30 10% 20% / 0.08);
-    --shadow-card: 0 8px 30px -8px hsl(30 10% 20% / 0.1);
-    --shadow-elevated: 0 20px 50px -12px hsl(30 10% 20% / 0.15);
+    /* Shadows - softer, warmer */
+    --shadow-soft: 0 4px 20px -4px hsl(30 10% 20% / 0.06);
+    --shadow-card: 0 8px 30px -8px hsl(30 10% 20% / 0.08);
+    --shadow-elevated: 0 20px 50px -12px hsl(30 10% 20% / 0.12);
+    --shadow-hover: 0 12px 40px -8px hsl(90 15% 50% / 0.15);
 
+    /* Sidebar (for compatibility) */
     --sidebar-background: 40 33% 98%;
-    --sidebar-foreground: 30 10% 20%;
-    --sidebar-primary: 145 25% 36%;
+    --sidebar-foreground: 0 0% 27%;
+    --sidebar-primary: 100 17% 46%;
     --sidebar-primary-foreground: 40 33% 98%;
     --sidebar-accent: 35 40% 92%;
-    --sidebar-accent-foreground: 30 10% 25%;
+    --sidebar-accent-foreground: 0 0% 27%;
     --sidebar-border: 35 20% 88%;
-    --sidebar-ring: 145 25% 36%;
+    --sidebar-ring: 100 17% 46%;
   }
 
   .dark {
     --background: 30 15% 10%;
     --foreground: 40 20% 95%;
+    --heading: 100 25% 60%;
 
     --card: 30 15% 12%;
     --card-foreground: 40 20% 95%;
@@ -95,7 +102,7 @@
     --popover: 30 15% 12%;
     --popover-foreground: 40 20% 95%;
 
-    --primary: 145 30% 50%;
+    --primary: 100 25% 50%;
     --primary-foreground: 30 15% 10%;
 
     --secondary: 30 15% 18%;
@@ -112,16 +119,16 @@
 
     --border: 30 15% 20%;
     --input: 30 15% 20%;
-    --ring: 145 30% 50%;
+    --ring: 100 25% 50%;
 
     --sidebar-background: 30 15% 10%;
     --sidebar-foreground: 40 20% 95%;
-    --sidebar-primary: 145 30% 50%;
+    --sidebar-primary: 100 25% 50%;
     --sidebar-primary-foreground: 30 15% 10%;
     --sidebar-accent: 30 15% 18%;
     --sidebar-accent-foreground: 40 20% 95%;
     --sidebar-border: 30 15% 20%;
-    --sidebar-ring: 145 30% 50%;
+    --sidebar-ring: 100 25% 50%;
   }
 }
 
@@ -135,26 +142,34 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.0625rem; /* 17px base */
     line-height: 1.6;
+    letter-spacing: 0.01em;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Lora', serif;
-    @apply font-semibold;
-    letter-spacing: 0.5px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
     line-height: 1.2;
     color: hsl(var(--heading));
   }
 
-  h1 {
-    @apply font-semibold;
-  }
-
   p {
     line-height: 1.6;
+  }
+
+  /* Consistent link styling */
+  a {
+    transition: color 0.2s ease-in-out;
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
   }
 }
 
@@ -179,10 +194,6 @@
     background: var(--gradient-card);
   }
 
-  .gradient-section {
-    background: var(--gradient-section);
-  }
-
   .shadow-soft {
     box-shadow: var(--shadow-soft);
   }
@@ -195,11 +206,15 @@
     box-shadow: var(--shadow-elevated);
   }
 
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+
   .text-balance {
     text-wrap: balance;
   }
 
-  /* Section divider with subtle pattern */
+  /* Section divider */
   .section-divider {
     position: relative;
   }
@@ -211,17 +226,37 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100px;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
+    height: 2px;
+    background: hsl(var(--divider));
     border-radius: 2px;
+  }
+
+  /* Link with underline animation */
+  .link-underline {
+    position: relative;
+  }
+
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: hsl(var(--cta));
+    transition: width 0.3s ease;
+  }
+
+  .link-underline:hover::after {
+    width: 100%;
   }
 }
 
-/* Animation keyframes */
+/* Animation keyframes - refined timing */
 @keyframes fade-in-up {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
@@ -241,7 +276,7 @@
 @keyframes scale-in {
   from {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.96);
   }
   to {
     opacity: 1;
@@ -249,20 +284,56 @@
   }
 }
 
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out forwards;
+  animation: fade-in-up 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .animate-fade-in {
-  animation: fade-in 0.6s ease-out forwards;
+  animation: fade-in 0.5s ease-out forwards;
 }
 
 .animate-scale-in {
-  animation: scale-in 0.5s ease-out forwards;
+  animation: scale-in 0.4s ease-out forwards;
 }
 
+.animate-slide-up {
+  animation: slide-up 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Animation delays */
 .animation-delay-100 { animation-delay: 100ms; }
 .animation-delay-200 { animation-delay: 200ms; }
 .animation-delay-300 { animation-delay: 300ms; }
 .animation-delay-400 { animation-delay: 400ms; }
 .animation-delay-500 { animation-delay: 500ms; }
+
+/* Image hover effect */
+.image-hover {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.image-hover:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}

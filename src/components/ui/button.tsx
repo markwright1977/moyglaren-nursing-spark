@@ -5,25 +5,25 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-base font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-cta text-white hover:bg-cta-hover shadow-sm hover:shadow-md",
+        default: "bg-cta text-white hover:bg-cta-hover shadow-soft hover:shadow-card",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border-2 border-cta bg-transparent text-cta hover:bg-cta hover:text-white",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-sm",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-soft",
         ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-cta underline-offset-4 hover:underline hover:text-cta-hover font-bold",
-        hero: "bg-background text-cta hover:bg-secondary shadow-lg hover:shadow-md font-bold",
-        accent: "bg-accent text-accent-foreground hover:bg-accent/90 shadow-sm",
-        primary: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm hover:shadow-md",
+        link: "text-cta underline-offset-4 hover:underline hover:text-cta-hover font-semibold",
+        hero: "bg-background text-cta hover:bg-secondary shadow-elevated hover:shadow-card font-bold",
+        accent: "bg-accent text-accent-foreground hover:bg-accent/90 shadow-soft",
+        primary: "bg-primary text-primary-foreground hover:bg-sage-dark shadow-soft hover:shadow-card",
       },
       size: {
-        default: "h-11 px-6 py-2",
-        sm: "h-9 rounded-md px-4",
-        lg: "h-14 rounded-xl px-10 text-base",
-        icon: "h-10 w-10",
+        default: "h-11 px-6 py-2 min-h-[44px]",
+        sm: "h-9 rounded-md px-4 min-h-[36px]",
+        lg: "h-14 rounded-lg px-10 text-base min-h-[56px]",
+        icon: "h-11 w-11 min-h-[44px] min-w-[44px]",
       },
     },
     defaultVariants: {

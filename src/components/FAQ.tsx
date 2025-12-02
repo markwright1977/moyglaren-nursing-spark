@@ -39,13 +39,13 @@ const FAQ = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="faq" className="py-24 md:py-28 bg-[hsl(var(--off-white))]">
-      <div className="container mx-auto px-4">
+    <section id="faq" className="py-section md:py-section-lg bg-background">
+      <div className="container mx-auto">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-14"
         >
           <div className="flex items-center justify-center gap-2 mb-3">
@@ -53,8 +53,8 @@ const FAQ = () => {
             <span className="text-primary font-medium tracking-wide uppercase text-sm">Questions</span>
             <Leaf className="w-5 h-5 text-primary transform scale-x-[-1]" />
           </div>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-primary mt-2 mb-4">
-            Frequently Asked Questions
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-2 mb-4">
+            Frequently Asked <span className="text-primary">Questions</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
             Here are some of the questions families often ask when exploring care options.
@@ -64,7 +64,7 @@ const FAQ = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           className="max-w-3xl mx-auto"
         >
           <Accordion type="single" collapsible className="space-y-4">
@@ -72,7 +72,7 @@ const FAQ = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-white border border-border/30 rounded-lg px-6 shadow-[0_2px_8px_rgba(0,0,0,0.05)] data-[state=open]:border-l-4 data-[state=open]:border-l-primary hover:border-l-4 hover:border-l-primary/50 transition-all duration-200"
+                className="bg-card border border-border/30 rounded-lg px-6 shadow-soft data-[state=open]:border-l-4 data-[state=open]:border-l-primary hover:border-l-4 hover:border-l-primary/50 transition-all duration-200"
               >
                 <AccordionTrigger 
                   className="text-left font-display text-lg text-primary hover:text-primary/80 transition-colors py-5 [&>svg]:text-primary"

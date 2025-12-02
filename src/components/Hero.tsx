@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Moyglare Nursing Home building exterior with beautiful gardens"
+          alt="Moyglare Nursing Home building exterior with beautiful gardens and fountain"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 gradient-hero" />
@@ -36,7 +36,12 @@ const Hero = () => {
             <Button variant="hero" size="lg" asChild>
               <a href="#contact">Schedule a Visit</a>
             </Button>
-            <Button variant="outline" size="lg" className="border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" asChild>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" 
+              asChild
+            >
               <a href="#about">Learn More</a>
             </Button>
           </div>
