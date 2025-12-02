@@ -73,6 +73,9 @@ export default {
           DEFAULT: "hsl(var(--cta))",
           hover: "hsl(var(--cta-hover))",
         },
+        "off-white": "hsl(var(--off-white))",
+        "pale-sage": "hsl(var(--pale-sage))",
+        "footer-green": "hsl(var(--footer-green))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
