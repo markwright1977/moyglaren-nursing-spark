@@ -33,7 +33,7 @@ const Header = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-lg font-medium text-muted-foreground hover:text-primary transition-colors duration-200"
+                className="text-lg font-medium text-foreground hover:text-primary transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -42,7 +42,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <a href="tel:+35316289022" className="flex items-center gap-2 text-base text-muted-foreground hover:text-primary transition-colors">
+            <a href="tel:+35316289022" className="flex items-center gap-2 text-base text-foreground hover:text-primary transition-colors">
               <Phone className="w-4 h-4" />
               <span className="hidden lg:inline">+353 1 628 9022</span>
             </a>
@@ -76,7 +76,7 @@ const Header = () => {
                 </a>
               ))}
               <div className="pt-4 border-t border-border">
-                <a href="tel:+35316289022" className="flex items-center gap-2 text-muted-foreground mb-4 px-2">
+                <a href="tel:+35316289022" className="flex items-center gap-2 text-foreground mb-4 px-2">
                   <Phone className="w-4 h-4" />
                   +353 1 628 9022
                 </a>
