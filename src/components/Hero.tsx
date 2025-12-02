@@ -10,7 +10,7 @@ const Hero = () => {
         <img
           src={heroImage}
           alt="Caring nurse with elderly residents at Moyglare Nursing Home"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-[70%_center] md:object-center"
         />
         {/* Subtle gradient overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-transparent" />
