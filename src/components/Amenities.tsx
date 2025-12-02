@@ -1,5 +1,9 @@
-import roomImage from "@/assets/room-comfort.jpg";
-import gardenImage from "@/assets/garden.jpg";
+import bedroomImage from "@/assets/bedroom.jpg";
+import gardenPatioImage from "@/assets/garden-patio.jpg";
+import gardenSeatingImage from "@/assets/garden-seating.jpg";
+import loungeImage from "@/assets/lounge.jpg";
+import diningImage from "@/assets/dining.jpg";
+import entranceHallImage from "@/assets/entrance-hall.jpg";
 import { Wifi, Tv, UtensilsCrossed, Flower2, Car, Church } from "lucide-react";
 
 const amenities = [
@@ -9,6 +13,15 @@ const amenities = [
   { icon: Flower2, label: "Gardens" },
   { icon: Car, label: "Parking" },
   { icon: Church, label: "Chapel Services" },
+];
+
+const galleryImages = [
+  { src: bedroomImage, alt: "Comfortable private bedroom", title: "Private Rooms" },
+  { src: diningImage, alt: "Elegant dining room", title: "Dining Room" },
+  { src: loungeImage, alt: "Cozy residents lounge", title: "Residents Lounge" },
+  { src: entranceHallImage, alt: "Welcoming entrance hall", title: "Entrance Hall" },
+  { src: gardenPatioImage, alt: "Outdoor patio area", title: "Garden Patio" },
+  { src: gardenSeatingImage, alt: "Garden seating area", title: "Garden Seating" },
 ];
 
 const Amenities = () => {
@@ -43,40 +56,25 @@ const Amenities = () => {
         </div>
 
         {/* Image Gallery */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-          <div className="relative rounded-2xl overflow-hidden shadow-card group">
-            <img
-              src={roomImage}
-              alt="Comfortable private bedroom at Moyglare"
-              className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6">
-              <h3 className="font-display text-2xl text-primary-foreground mb-2">
-                Private Rooms
-              </h3>
-              <p className="text-primary-foreground/90 text-sm">
-                Comfortable, well-appointed private rooms with personal touches
-              </p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+          {galleryImages.map((image, index) => (
+            <div 
+              key={index} 
+              className="relative rounded-xl overflow-hidden shadow-card group aspect-[4/3]"
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <h3 className="font-display text-lg text-primary-foreground">
+                  {image.title}
+                </h3>
+              </div>
             </div>
-          </div>
-
-          <div className="relative rounded-2xl overflow-hidden shadow-card group">
-            <img
-              src={gardenImage}
-              alt="Beautiful landscaped gardens"
-              className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6">
-              <h3 className="font-display text-2xl text-primary-foreground mb-2">
-                Landscaped Gardens
-              </h3>
-              <p className="text-primary-foreground/90 text-sm">
-                Beautiful gardens with scenic views of the Kildare countryside
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

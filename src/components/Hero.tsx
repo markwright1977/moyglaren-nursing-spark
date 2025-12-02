@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Heart, Users, Clock } from "lucide-react";
-import heroImage from "@/assets/hero-nursing-home.jpg";
+import entranceImage from "@/assets/entrance-2.jpg";
 
 const Hero = () => {
   return (
@@ -8,8 +8,8 @@ const Hero = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src={heroImage}
-          alt="Warm and welcoming common room at Moyglare Nursing Home"
+          src={entranceImage}
+          alt="Moyglare Nursing Home building exterior with beautiful gardens"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 gradient-hero" />
