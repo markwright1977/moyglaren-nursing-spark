@@ -12,7 +12,7 @@ const Hero = () => {
           alt="Moyglare Nursing Home building exterior with beautiful gardens"
           className="w-full h-full object-cover"
         />
-        {/* <div className="absolute inset-0 gradient-hero" /> */}
+        <div className="absolute inset-0 gradient-hero" />
       </div>
 
       {/* Content */}
