@@ -14,6 +14,8 @@ const MidPageHero = () => {
           src={loungeCozy}
           alt="Comfortable lounge area at Moyglare Nursing Home"
           className="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--primary)/0.9)] via-[hsl(var(--primary)/0.75)] to-[hsl(var(--primary)/0.5)]" />
       </div>

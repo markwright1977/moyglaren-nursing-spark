@@ -59,6 +59,8 @@ const Community = () => {
                     src={post.image}
                     alt={post.alt}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="p-6 flex flex-col flex-1">

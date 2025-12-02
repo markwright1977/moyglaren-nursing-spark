@@ -77,6 +77,8 @@ const Team = () => {
                   src={member.image}
                   alt={member.alt}
                   className="w-full h-full object-cover rounded-xl shadow-card transition-all duration-300 group-hover:brightness-105 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               
@@ -109,6 +111,8 @@ const Team = () => {
             src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&h=500&fit=crop"
             alt="The caring team at Moyglare Nursing Home gathered together, showing their warm and welcoming spirit"
             className="w-full h-64 md:h-80 object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--sage)/0.8)] via-[hsl(var(--sage)/0.3)] to-transparent flex items-end justify-center pb-8">
             <div className="text-center">
