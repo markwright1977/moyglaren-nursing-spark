@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
-import logo from "@/assets/moyglare-logo.png";
+import logo from "@/assets/moyglare-logo-transparent.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +23,7 @@ const Header = () => {
             <img 
               src={logo} 
               alt="Moyglare Nursing Home" 
-              className="h-20 w-auto mix-blend-multiply"
+              className="h-20 w-auto"
             />
           </a>
 
