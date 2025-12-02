@@ -24,7 +24,7 @@ const Team = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="team" className="py-20 bg-gradient-to-b from-background to-secondary/30">
+    <section id="team" className="py-20 bg-[hsl(var(--pale-sage))]">
       <div className="container mx-auto">
         <motion.div
           ref={ref}

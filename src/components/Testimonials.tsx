@@ -23,7 +23,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-20 md:py-32 bg-background">
+    <section id="testimonials" className="py-20 md:py-32 bg-[hsl(var(--off-white))]">
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">

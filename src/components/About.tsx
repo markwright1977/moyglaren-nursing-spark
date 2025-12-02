@@ -12,7 +12,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-32 gradient-warm">
+    <section id="about" className="py-20 md:py-32 bg-[hsl(var(--off-white))]">
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image */}

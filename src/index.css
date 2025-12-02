@@ -57,6 +57,13 @@
     --terracotta-light: 20 50% 90%;
     --warm-gray: 30 10% 45%;
     
+    /* Sectional backgrounds */
+    --off-white: 60 14% 97%; /* #FAFAF7 */
+    --pale-sage: 90 15% 94%; /* #EFF2ED */
+    --footer-green: 100 17% 46%; /* #6E8B61 */
+    --footer-text: 40 33% 98%;
+    --footer-text-muted: 40 20% 85%;
+    
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(145 25% 36% / 0.5), hsl(145 25% 28% / 0.6));
     --gradient-warm: linear-gradient(180deg, hsl(40 33% 98%), hsl(35 25% 94%));

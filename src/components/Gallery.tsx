@@ -11,12 +11,12 @@ import garden from '@/assets/garden-patio-new.jpg';
 import gardenSeating from '@/assets/garden-seating-new.jpg';
 
 const images = [
-  { src: entranceHall, alt: 'Welcoming entrance hall', title: 'Entrance Hall' },
-  { src: lounge, alt: 'Comfortable lounge area', title: 'Main Lounge' },
-  { src: bedroom, alt: 'Private bedroom', title: 'Private Rooms' },
-  { src: dining, alt: 'Elegant dining room', title: 'Dining Room' },
-  { src: garden, alt: 'Beautiful garden patio', title: 'Garden Patio' },
-  { src: gardenSeating, alt: 'Peaceful garden seating', title: 'Garden Seating' },
+  { src: entranceHall, alt: 'Welcoming entrance hall with comfortable seating and natural light', title: 'Entrance Hall', caption: 'A warm welcome awaits you' },
+  { src: lounge, alt: 'Comfortable lounge area with cozy furniture for residents to relax', title: 'Main Lounge', caption: 'Where friendships flourish' },
+  { src: bedroom, alt: 'Private bedroom with ensuite facilities and personal touches', title: 'Private Rooms', caption: 'Your own peaceful sanctuary' },
+  { src: dining, alt: 'Elegant dining room where residents enjoy nutritious meals together', title: 'Dining Room', caption: 'Meals made with care' },
+  { src: garden, alt: 'Beautiful garden patio with flowers and seating areas', title: 'Garden Patio', caption: 'Nature at your doorstep' },
+  { src: gardenSeating, alt: 'Peaceful garden seating area surrounded by greenery', title: 'Garden Seating', caption: 'Tranquil outdoor spaces' },
 ];
 
 const Gallery = () => {
@@ -39,7 +39,7 @@ const Gallery = () => {
   };
 
   return (
-    <section id="gallery" className="py-20 bg-gradient-to-b from-secondary/30 to-background">
+    <section id="gallery" className="py-20 bg-[hsl(var(--off-white))]">
       <div className="container mx-auto">
         <motion.div
           ref={ref}
@@ -49,7 +49,7 @@ const Gallery = () => {
           className="text-center mb-12"
         >
           <span className="text-primary font-medium tracking-wide uppercase text-sm">Our Facility</span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mt-2 mb-4">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-heading mt-2 mb-4">
             A Place of Comfort
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -57,25 +57,34 @@ const Gallery = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {images.map((image, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isVisible ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative aspect-[4/3] overflow-hidden rounded-xl cursor-pointer"
+              className="group relative overflow-hidden rounded-xl cursor-pointer"
               onClick={() => openLightbox(index)}
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-4 left-4">
-                  <p className="text-primary-foreground font-display text-lg">{image.title}</p>
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
+                />
+              </div>
+              {/* Warm beige overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(35_40%_30%/0.7)] via-[hsl(35_30%_50%/0.2)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-4 left-4 right-4">
+                  <p className="text-white font-display text-lg">{image.title}</p>
+                  <p className="text-white/80 text-sm">{image.caption}</p>
                 </div>
+              </div>
+              {/* Caption always visible below image */}
+              <div className="py-3 text-center">
+                <p className="text-foreground font-medium text-sm">{image.title}</p>
+                <p className="text-muted-foreground text-xs">{image.caption}</p>
               </div>
             </motion.div>
           ))}
@@ -94,14 +103,16 @@ const Gallery = () => {
           >
             <button
               onClick={closeLightbox}
-              className="absolute top-4 right-4 text-primary-foreground hover:text-accent transition-colors"
+              className="absolute top-4 right-4 text-white hover:text-accent transition-colors"
+              aria-label="Close lightbox"
             >
               <X className="w-8 h-8" />
             </button>
             
             <button
               onClick={(e) => { e.stopPropagation(); goToPrevious(); }}
-              className="absolute left-4 text-primary-foreground hover:text-accent transition-colors"
+              className="absolute left-4 text-white hover:text-accent transition-colors"
+              aria-label="Previous image"
             >
               <ChevronLeft className="w-10 h-10" />
             </button>
@@ -119,14 +130,16 @@ const Gallery = () => {
             
             <button
               onClick={(e) => { e.stopPropagation(); goToNext(); }}
-              className="absolute right-4 text-primary-foreground hover:text-accent transition-colors"
+              className="absolute right-4 text-white hover:text-accent transition-colors"
+              aria-label="Next image"
             >
               <ChevronRight className="w-10 h-10" />
             </button>
             
-            <div className="absolute bottom-4 text-primary-foreground text-center">
+            <div className="absolute bottom-4 text-white text-center">
               <p className="font-display text-xl">{images[selectedIndex].title}</p>
-              <p className="text-sm opacity-70">{selectedIndex + 1} / {images.length}</p>
+              <p className="text-sm opacity-80">{images[selectedIndex].caption}</p>
+              <p className="text-sm opacity-60 mt-1">{selectedIndex + 1} / {images.length}</p>
             </div>
           </motion.div>
         )}
