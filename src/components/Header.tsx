@@ -23,7 +23,7 @@ const Header = () => {
             <img 
               src={logo} 
               alt="Moyglare Nursing Home" 
-              className="h-20 w-auto"
+              className="h-20 w-auto mix-blend-multiply"
             />
           </a>
 
