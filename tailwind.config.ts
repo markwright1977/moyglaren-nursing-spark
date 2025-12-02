@@ -15,7 +15,11 @@ export default {
     extend: {
       fontFamily: {
         display: ['"Lora"', 'serif'],
-        sans: ['"DM Sans"', 'sans-serif'],
+        sans: ['"Nunito Sans"', 'sans-serif'],
+      },
+      fontSize: {
+        'body': ['1.0625rem', { lineHeight: '1.6' }], // 17px base
+        'body-lg': ['1.125rem', { lineHeight: '1.6' }], // 18px
       },
       colors: {
         border: "hsl(var(--border))",
@@ -63,6 +67,11 @@ export default {
         terracotta: {
           DEFAULT: "hsl(var(--terracotta))",
           light: "hsl(var(--terracotta-light))",
+        },
+        heading: "hsl(var(--heading))",
+        cta: {
+          DEFAULT: "hsl(var(--cta))",
+          hover: "hsl(var(--cta-hover))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
