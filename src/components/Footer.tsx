@@ -48,9 +48,14 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[hsl(var(--footer-text))] mt-1 flex-shrink-0" />
-                <span className="text-[hsl(var(--footer-text-muted))] text-sm leading-relaxed">
+                <a 
+                  href="https://www.google.com/maps/place/MOYGLARE+NURSING+HOME/@53.3909083,-6.5975496,17z/data=!3m1!4b1!4m6!3m5!1s0x48676fe5c2bfe8a1:0x5956f5617982a8c8!8m2!3d53.3909083!4d-6.5975496!16s%2Fg%2F1hf12ynpl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[hsl(var(--footer-text-muted))] text-sm leading-relaxed hover:text-[hsl(var(--footer-text))] transition-colors duration-200"
+                >
                   Moyglare Road, Maynooth,<br />Co. Kildare, W23 HF82
-                </span>
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[hsl(var(--footer-text))] flex-shrink-0" />
