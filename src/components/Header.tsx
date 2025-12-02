@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import {
@@ -11,6 +11,17 @@ import logo from "@/assets/moyglare-logo-new.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Transition after scrolling past ~80% of viewport height (hero section)
+      setIsScrolled(window.scrollY > window.innerHeight * 0.8);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const mainNavLinks = [
     { href: "#about", label: "About Us" },
@@ -30,7 +41,13 @@ const Header = () => {
   const allNavLinks = [...mainNavLinks.slice(0, 3), ...moreNavLinks, ...mainNavLinks.slice(3)];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? "bg-background/95 backdrop-blur-md border-b border-border/50" 
+          : "bg-transparent"
+      }`}
+    >
       <div className="container mx-auto">
         <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo */}
@@ -48,7 +65,11 @@ const Header = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-base font-medium text-foreground hover:text-primary transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                className={`text-base font-medium transition-all duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:transition-all after:duration-300 hover:after:w-full ${
+                  isScrolled 
+                    ? "text-foreground hover:text-primary after:bg-primary" 
+                    : "text-white hover:text-white/80 after:bg-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+                }`}
               >
                 {link.label}
               </a>
@@ -56,7 +77,11 @@ const Header = () => {
             
             {/* More Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-base font-medium text-foreground hover:text-primary transition-colors duration-200">
+              <DropdownMenuTrigger className={`flex items-center gap-1 text-base font-medium transition-all duration-300 ${
+                isScrolled 
+                  ? "text-foreground hover:text-primary" 
+                  : "text-white hover:text-white/80 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+              }`}>
                 More
                 <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
@@ -79,7 +104,11 @@ const Header = () => {
           <div className="hidden md:flex items-center gap-4">
             <a 
               href="tel:+35316289022" 
-              className="flex items-center gap-2 text-base text-foreground hover:text-cta transition-colors"
+              className={`flex items-center gap-2 text-base transition-all duration-300 ${
+                isScrolled 
+                  ? "text-foreground hover:text-cta" 
+                  : "text-white hover:text-white/80 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+              }`}
             >
               <Phone className="w-4 h-4" />
               <span className="hidden lg:inline">+353 1 628 9022</span>
@@ -91,7 +120,9 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-foreground min-h-[44px] min-w-[44px] flex items-center justify-center"
+            className={`lg:hidden p-2 min-h-[44px] min-w-[44px] flex items-center justify-center transition-colors duration-300 ${
+              isScrolled ? "text-foreground" : "text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+            }`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
@@ -102,7 +133,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="lg:hidden py-6 border-t border-border/50 animate-fade-in">
+          <nav className="lg:hidden py-6 border-t border-border/50 animate-fade-in bg-background">
             <div className="flex flex-col gap-2">
               {allNavLinks.map((link) => (
                 <a
