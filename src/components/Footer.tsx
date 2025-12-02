@@ -79,7 +79,7 @@ const Footer = () => {
             <ul className="text-[hsl(var(--footer-text-muted))] text-sm space-y-2 mb-4">
               <li><strong className="text-[hsl(var(--footer-text))]">Registered Provider:</strong> Moyglare Nursing Home Ltd</li>
               <li><strong className="text-[hsl(var(--footer-text))]">HIQA Registration No:</strong> 72</li>
-              <li><strong className="text-[hsl(var(--footer-text))]">Person in Charge:</strong> Ann Hughes</li>
+              <li><strong className="text-[hsl(var(--footer-text))]">Person in Charge:</strong> Anne Corcoran</li>
             </ul>
             <a 
               href="https://www.hiqa.ie/system/files?file=inspectionreports/72-moyglare-nursing-home-27-november-2024.pdf" 
