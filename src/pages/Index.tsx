@@ -3,10 +3,14 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
+import Gallery from "@/components/Gallery";
 import Amenities from "@/components/Amenities";
+import Team from "@/components/Team";
 import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import MobileCTA from "@/components/MobileCTA";
 
 const Index = () => {
   return (
@@ -27,11 +31,15 @@ const Index = () => {
           <Hero />
           <About />
           <Services />
+          <Gallery />
           <Amenities />
+          <Team />
           <Testimonials />
+          <FAQ />
           <Contact />
         </main>
         <Footer />
+        <MobileCTA />
       </div>
     </>
   );
