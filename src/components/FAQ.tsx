@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { Leaf } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
@@ -38,21 +39,25 @@ const FAQ = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="faq" className="py-20 bg-background">
-      <div className="container mx-auto">
+    <section id="faq" className="py-24 md:py-28 bg-[hsl(var(--off-white))]">
+      <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-14"
         >
-          <span className="text-primary font-medium tracking-wide uppercase text-sm">Questions</span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mt-2 mb-4">
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <Leaf className="w-5 h-5 text-primary" />
+            <span className="text-primary font-medium tracking-wide uppercase text-sm">Questions</span>
+            <Leaf className="w-5 h-5 text-primary transform scale-x-[-1]" />
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-primary mt-2 mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Find answers to common questions about our care services and facilities.
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
+            Here are some of the questions families often ask when exploring care options.
           </p>
         </motion.div>
 
@@ -67,12 +72,15 @@ const FAQ = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card border border-border rounded-xl px-6 shadow-soft"
+                className="bg-white border border-border/30 rounded-lg px-6 shadow-[0_2px_8px_rgba(0,0,0,0.05)] data-[state=open]:border-l-4 data-[state=open]:border-l-primary hover:border-l-4 hover:border-l-primary/50 transition-all duration-200"
               >
-                <AccordionTrigger className="text-left font-display text-lg hover:text-primary transition-colors py-5">
+                <AccordionTrigger 
+                  className="text-left font-display text-lg text-primary hover:text-primary/80 transition-colors py-5 [&>svg]:text-primary"
+                  aria-label={`Toggle answer for: ${faq.question}`}
+                >
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
+                <AccordionContent className="text-foreground leading-relaxed pb-5 text-base">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
