@@ -15,15 +15,15 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <div className="container mx-auto">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <a href="#" className="flex items-center">
             <img 
               src={logo} 
               alt="Moyglare Nursing Home" 
-              className="h-16 w-auto"
+              className="h-20 w-auto"
             />
           </a>
 
