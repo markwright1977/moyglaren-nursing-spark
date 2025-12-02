@@ -6,6 +6,7 @@ import Services from "@/components/Services";
 import Gallery from "@/components/Gallery";
 import Amenities from "@/components/Amenities";
 import MidPageHero from "@/components/MidPageHero";
+import Community from "@/components/Community";
 import Team from "@/components/Team";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -35,6 +36,7 @@ const Index = () => {
           <Gallery />
           <Amenities />
           <MidPageHero />
+          <Community />
           <Team />
           <Testimonials />
           <FAQ />
