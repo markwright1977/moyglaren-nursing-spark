@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
+import logo from "@/assets/moyglare-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,16 +19,12 @@ const Header = () => {
       <div className="container mx-auto">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-display text-xl font-bold">M</span>
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="font-display text-xl font-semibold text-foreground leading-tight">
-                Moyglare
-              </h1>
-              <p className="text-xs text-muted-foreground">Nursing Home</p>
-            </div>
+          <a href="#" className="flex items-center">
+            <img 
+              src={logo} 
+              alt="Moyglare Nursing Home" 
+              className="h-16 w-auto"
+            />
           </a>
 
           {/* Desktop Navigation */}
