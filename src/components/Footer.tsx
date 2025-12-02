@@ -127,14 +127,14 @@ const Footer = () => {
               </Link>
               <span className="text-[hsl(var(--footer-text)/0.3)] hidden md:inline">|</span>
               <Link 
-                to="/privacy#cookies" 
+                to="/cookies" 
                 className="text-[hsl(var(--footer-text-muted))] hover:text-[hsl(var(--footer-text))] transition-colors duration-200"
               >
                 Cookies
               </Link>
               <span className="text-[hsl(var(--footer-text)/0.3)] hidden md:inline">|</span>
               <Link 
-                to="/privacy" 
+                to="/accessibility" 
                 className="text-[hsl(var(--footer-text-muted))] hover:text-[hsl(var(--footer-text))] transition-colors duration-200"
               >
                 Accessibility

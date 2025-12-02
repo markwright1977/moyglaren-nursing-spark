@@ -7,6 +7,8 @@ import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import Privacy from "./pages/Privacy";
 import Complaints from "./pages/Complaints";
+import Cookies from "./pages/Cookies";
+import Accessibility from "./pages/Accessibility";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +24,8 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/complaints" element={<Complaints />} />
+            <Route path="/cookies" element={<Cookies />} />
+            <Route path="/accessibility" element={<Accessibility />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
