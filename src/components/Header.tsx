@@ -30,7 +30,7 @@ const Header = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-10">
+          <nav className="hidden lg:flex items-center justify-center flex-1 mx-8 gap-6 xl:gap-10">
             {navLinks.map((link) => (
               <a
                 key={link.href}
