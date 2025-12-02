@@ -115,8 +115,8 @@ ${formData.message}`;
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                  <a href="mailto:info@moyglarenursinghome.ie" className="text-muted-foreground hover:text-cta transition-colors">
-                    info@moyglarenursinghome.ie
+                  <a href="mailto:info@moyglare.ie" className="text-muted-foreground hover:text-cta transition-colors">
+                    info@moyglare.ie
                   </a>
                 </div>
               </div>
