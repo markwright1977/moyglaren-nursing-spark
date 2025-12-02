@@ -1,18 +1,20 @@
-import { Check } from "lucide-react";
+import { Check, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import aboutImage from "@/assets/about-building.jpg";
+
+const HIQA_REPORT_URL = "https://www.hiqa.ie/system/files?file=inspectionreports/72-moyglare-nursing-home-27-november-2024.pdf";
 
 const About = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   const highlights = [
-    "HIQA registered and regularly inspected",
-    "Experienced and compassionate nursing staff",
-    "Person-centred care approach",
-    "Beautiful countryside setting",
-    "Family-friendly visiting policy",
-    "Nutritious home-cooked meals",
+    { text: "HIQA registered and regularly inspected", link: HIQA_REPORT_URL },
+    { text: "Experienced and compassionate nursing staff" },
+    { text: "Person-centred care approach" },
+    { text: "Beautiful countryside setting" },
+    { text: "Family-friendly visiting policy" },
+    { text: "Nutritious home-cooked meals" },
   ];
 
   return (
@@ -76,7 +78,19 @@ const About = () => {
                   <span className="w-6 h-6 rounded-full bg-sage-light flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Check className="w-3.5 h-3.5 text-primary" />
                   </span>
-                  <span className="text-foreground">{item}</span>
+                  {item.link ? (
+                    <a 
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-foreground hover:text-primary transition-colors duration-200 inline-flex items-center gap-1.5 underline underline-offset-2"
+                    >
+                      {item.text}
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  ) : (
+                    <span className="text-foreground">{item.text}</span>
+                  )}
                 </li>
               ))}
             </ul>
