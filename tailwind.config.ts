@@ -9,7 +9,7 @@ export default {
       center: true,
       padding: "1.5rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1200px", // Max content width
       },
     },
     extend: {
@@ -18,8 +18,8 @@ export default {
         sans: ['"Nunito Sans"', 'sans-serif'],
       },
       fontSize: {
-        'body': ['1.0625rem', { lineHeight: '1.6' }], // 17px base
-        'body-lg': ['1.125rem', { lineHeight: '1.6' }], // 18px
+        'body': ['1.0625rem', { lineHeight: '1.6', letterSpacing: '0.01em' }], // 17px
+        'body-lg': ['1.125rem', { lineHeight: '1.6', letterSpacing: '0.01em' }], // 18px
       },
       colors: {
         border: "hsl(var(--border))",
@@ -66,7 +66,7 @@ export default {
         },
         terracotta: {
           DEFAULT: "hsl(var(--terracotta))",
-          light: "hsl(var(--terracotta-light))",
+          dark: "hsl(var(--terracotta-dark))",
         },
         heading: "hsl(var(--heading))",
         cta: {
@@ -76,6 +76,7 @@ export default {
         "off-white": "hsl(var(--off-white))",
         "pale-sage": "hsl(var(--pale-sage))",
         "footer-green": "hsl(var(--footer-green))",
+        divider: "hsl(var(--divider))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -86,6 +87,10 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      spacing: {
+        'section': '6rem', // 96px - consistent section padding
+        'section-lg': '7rem', // 112px
       },
       borderRadius: {
         lg: "var(--radius)",

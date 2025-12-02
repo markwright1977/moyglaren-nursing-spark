@@ -1,4 +1,6 @@
 import { Star, Quote, Heart } from "lucide-react";
+import { motion } from "framer-motion";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
 
 const testimonials = [
@@ -42,36 +44,48 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const highlightedTestimonial = testimonials.find(t => t.highlighted);
   const regularTestimonials = testimonials.filter(t => !t.highlighted);
 
   return (
-    <section id="testimonials" className="py-24 md:py-32 bg-[hsl(var(--off-white))]">
-      <div className="container mx-auto px-4">
+    <section id="testimonials" className="py-section md:py-section-lg bg-[hsl(var(--off-white))]">
+      <div className="container mx-auto">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 24 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center max-w-2xl mx-auto mb-14"
+        >
           <span className="text-primary font-medium text-sm tracking-wide uppercase mb-4 block">
             Testimonials
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-primary mb-6">
-            What Families Say About Us
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mb-6">
+            What Families <span className="text-primary">Say About Us</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
             Real words from families who trust Moyglare with their loved ones.
           </p>
-        </div>
+        </motion.div>
 
         {/* Highlighted Testimonial */}
         {highlightedTestimonial && (
-          <div className="max-w-3xl mx-auto mb-12">
-            <div className="relative p-8 md:p-10 rounded-2xl bg-[hsl(var(--pale-sage))] shadow-lg border border-sage-light/20">
-              <Quote className="absolute top-6 left-6 w-12 h-12 text-terracotta/30" />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+            className="max-w-3xl mx-auto mb-12"
+          >
+            <div className="relative p-8 md:p-10 rounded-lg bg-[hsl(var(--pale-sage))] shadow-card border border-primary/10">
+              <Quote className="absolute top-6 left-6 w-10 h-10 text-cta/20" />
               
               <div className="relative z-10">
                 {/* Stars */}
                 <div className="flex gap-1 mb-6 justify-center">
                   {[...Array(highlightedTestimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-terracotta text-terracotta" />
+                    <Star key={i} className="w-5 h-5 fill-cta text-cta" />
                   ))}
                 </div>
 
@@ -80,80 +94,90 @@ const Testimonials = () => {
                 </p>
 
                 <div className="flex items-center justify-center gap-2">
-                  <Heart className="w-4 h-4 text-terracotta" />
+                  <Heart className="w-4 h-4 text-cta" />
                   <p className="font-display font-semibold text-primary text-lg">
                     {highlightedTestimonial.author}
                   </p>
                 </div>
-                <p className="text-sm text-center mt-1" style={{ color: '#777777' }}>
+                <p className="text-sm text-center mt-1 text-muted-foreground">
                   {highlightedTestimonial.relation}
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         )}
 
         {/* Regular Testimonials Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
           {regularTestimonials.map((testimonial, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group relative p-8 rounded-2xl bg-card border border-border/50 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[hsl(var(--pale-sage))]/50"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.1 * index + 0.3, ease: "easeOut" }}
+              className="group relative p-8 rounded-lg bg-card border border-border/30 shadow-soft card-hover"
             >
-              <Quote className="absolute top-6 right-6 w-8 h-8 text-terracotta/20" />
+              <Quote className="absolute top-6 right-6 w-8 h-8 text-cta/15" />
               
               {/* Stars */}
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-terracotta text-terracotta" />
+                  <Star key={i} className="w-4 h-4 fill-cta text-cta" />
                 ))}
               </div>
 
-              <p className="text-foreground leading-relaxed mb-6 italic max-w-[350px]">
+              <p className="text-foreground leading-relaxed mb-6 italic">
                 "{testimonial.quote}"
               </p>
 
               <div className="flex items-center gap-2">
-                <Heart className="w-4 h-4 text-terracotta opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <Heart className="w-4 h-4 text-cta opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div>
                   <p className="font-display font-semibold text-primary">
                     {testimonial.author}
                   </p>
-                  <p className="text-sm" style={{ color: '#777777' }}>
+                  <p className="text-sm text-muted-foreground">
                     {testimonial.relation}
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Read More Stories Link */}
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isVisible ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="text-center mb-14"
+        >
           <a 
             href="#contact" 
-            className="inline-flex items-center text-terracotta hover:underline transition-all duration-200 font-medium"
+            className="inline-flex items-center text-cta hover:text-cta-hover transition-colors duration-200 font-medium link-underline"
           >
             Read More Stories
             <span className="ml-1">→</span>
           </a>
-        </div>
+        </motion.div>
 
         {/* CTA Block */}
-        <div className="max-w-2xl mx-auto text-center bg-card rounded-2xl p-10 shadow-soft border border-border/30">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.7, ease: "easeOut" }}
+          className="max-w-2xl mx-auto text-center bg-card rounded-lg p-10 shadow-soft border border-border/30"
+        >
           <h3 className="font-display text-2xl md:text-3xl text-primary mb-4">
             We'd love to care for your loved one too.
           </h3>
           <p className="text-muted-foreground mb-8 leading-relaxed">
             Every family deserves peace of mind. Let us show you how Moyglare can become a second home.
           </p>
-          <Button 
-            asChild
-            className="bg-terracotta hover:bg-terracotta-dark text-white px-8 py-3 rounded-full text-lg font-semibold transition-all duration-200"
-          >
+          <Button size="lg" asChild>
             <a href="#contact">Arrange a Visit</a>
           </Button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

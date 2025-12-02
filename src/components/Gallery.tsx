@@ -39,20 +39,20 @@ const Gallery = () => {
   };
 
   return (
-    <section id="gallery" className="py-20 bg-[hsl(var(--off-white))]">
+    <section id="gallery" className="py-section md:py-section-lg bg-background">
       <div className="container mx-auto">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-14"
         >
           <span className="text-primary font-medium tracking-wide uppercase text-sm">Our Facility</span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-heading mt-2 mb-4">
-            A Place of Comfort
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-2 mb-4">
+            A Place of <span className="text-primary">Comfort</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
             Take a virtual tour through our beautifully maintained spaces designed for comfort and wellbeing.
           </p>
         </motion.div>
@@ -61,28 +61,28 @@ const Gallery = () => {
           {images.map((image, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.96 }}
               animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-xl cursor-pointer"
+              transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+              className="group relative overflow-hidden rounded-lg cursor-pointer shadow-soft"
               onClick={() => openLightbox(index)}
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                 />
               </div>
               {/* Warm beige overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(35_40%_30%/0.7)] via-[hsl(35_30%_50%/0.2)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(50_20%_30%/0.7)] via-[hsl(50_20%_50%/0.2)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-4 left-4 right-4">
                   <p className="text-white font-display text-lg">{image.title}</p>
                   <p className="text-white/80 text-sm">{image.caption}</p>
                 </div>
               </div>
               {/* Caption always visible below image */}
-              <div className="py-3 text-center">
+              <div className="py-3 px-2 text-center bg-card">
                 <p className="text-foreground font-medium text-sm">{image.title}</p>
                 <p className="text-muted-foreground text-xs">{image.caption}</p>
               </div>
@@ -103,7 +103,7 @@ const Gallery = () => {
           >
             <button
               onClick={closeLightbox}
-              className="absolute top-4 right-4 text-white hover:text-accent transition-colors"
+              className="absolute top-4 right-4 text-white hover:text-accent transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
               aria-label="Close lightbox"
             >
               <X className="w-8 h-8" />
@@ -111,7 +111,7 @@ const Gallery = () => {
             
             <button
               onClick={(e) => { e.stopPropagation(); goToPrevious(); }}
-              className="absolute left-4 text-white hover:text-accent transition-colors"
+              className="absolute left-4 text-white hover:text-accent transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
               aria-label="Previous image"
             >
               <ChevronLeft className="w-10 h-10" />
@@ -119,9 +119,9 @@ const Gallery = () => {
             
             <motion.img
               key={selectedIndex}
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
+              exit={{ opacity: 0, scale: 0.96 }}
               src={images[selectedIndex].src}
               alt={images[selectedIndex].alt}
               className="max-w-full max-h-[85vh] object-contain rounded-lg"
@@ -130,7 +130,7 @@ const Gallery = () => {
             
             <button
               onClick={(e) => { e.stopPropagation(); goToNext(); }}
-              className="absolute right-4 text-white hover:text-accent transition-colors"
+              className="absolute right-4 text-white hover:text-accent transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
               aria-label="Next image"
             >
               <ChevronRight className="w-10 h-10" />

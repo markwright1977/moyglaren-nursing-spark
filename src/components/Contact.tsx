@@ -8,18 +8,18 @@ const Contact = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="contact" className="py-24 md:py-32 bg-[hsl(var(--pale-sage))]">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-section md:py-section-lg bg-[hsl(var(--pale-sage))]">
+      <div className="container mx-auto">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-14"
         >
           <span className="text-primary font-medium tracking-wide uppercase text-sm">Get in Touch</span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-primary mt-2 mb-4">
-            We'd Love to Hear From You
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-2 mb-4">
+            We'd Love to <span className="text-primary">Hear From You</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
             Whether you're exploring care options or planning a visit, our friendly team is here to help.
@@ -29,13 +29,13 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Side - Info & Image */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -24 }}
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             className="space-y-8"
           >
             {/* Warm Intro */}
-            <div className="prose prose-lg">
+            <div>
               <p className="text-foreground leading-relaxed text-lg">
                 We understand that choosing a nursing home is one of the most important decisions 
                 you'll make for your family. Our doors are always open, and we'd be delighted 
@@ -44,16 +44,16 @@ const Contact = () => {
             </div>
 
             {/* Image */}
-            <div className="rounded-2xl overflow-hidden shadow-elevated">
+            <div className="rounded-lg overflow-hidden shadow-elevated">
               <img 
                 src={entranceImage} 
-                alt="The welcoming entrance of Moyglare Nursing Home" 
+                alt="The welcoming entrance of Moyglare Nursing Home with fountain and gardens" 
                 className="w-full h-64 object-cover"
               />
             </div>
 
             {/* Contact Details */}
-            <div className="space-y-4">
+            <div className="space-y-5">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-5 h-5 text-primary" />
@@ -73,7 +73,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Phone</h3>
-                  <a href="tel:+35316289022" className="text-muted-foreground hover:text-primary transition-colors">
+                  <a href="tel:+35316289022" className="text-muted-foreground hover:text-cta transition-colors">
                     +353 1 628 9022
                   </a>
                 </div>
@@ -85,7 +85,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                  <a href="mailto:info@moyglarenursinghome.ie" className="text-muted-foreground hover:text-primary transition-colors">
+                  <a href="mailto:info@moyglarenursinghome.ie" className="text-muted-foreground hover:text-cta transition-colors">
                     info@moyglarenursinghome.ie
                   </a>
                 </div>
@@ -109,7 +109,8 @@ const Contact = () => {
               <Button 
                 asChild 
                 size="lg" 
-                className="w-full bg-primary hover:bg-primary/90 text-white"
+                variant="primary"
+                className="w-full"
               >
                 <a href="tel:+35316289022" className="flex items-center justify-center gap-2">
                   <PhoneCall className="w-5 h-5" />
@@ -119,7 +120,7 @@ const Contact = () => {
             </div>
 
             {/* Google Maps */}
-            <div className="rounded-2xl overflow-hidden shadow-soft">
+            <div className="rounded-lg overflow-hidden shadow-soft">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2375.7695736!2d-6.5987!3d53.3842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48677b5c1f6ef72f%3A0x!2sMoyglare%20Road%2C%20Maynooth%2C%20Co.%20Kildare!5e0!3m2!1sen!2sie!4v1"
                 width="100%"
@@ -136,11 +137,11 @@ const Contact = () => {
 
           {/* Right Side - Form Card */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 24 }}
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           >
-            <div className="bg-white rounded-2xl p-8 md:p-10 shadow-elevated">
+            <div className="bg-card rounded-lg p-8 md:p-10 shadow-elevated">
               <h3 className="font-display text-2xl text-primary mb-2">
                 Request a Visit
               </h3>
@@ -223,7 +224,7 @@ const Contact = () => {
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="w-full bg-terracotta hover:bg-terracotta-dark text-white font-semibold py-3 min-h-[48px]"
+                  className="w-full"
                 >
                   Send Message
                 </Button>
@@ -240,10 +241,10 @@ const Contact = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
           className="mt-16 text-center"
         >
-          <p className="text-lg text-foreground/80 italic">
+          <p className="text-lg text-foreground/80 italic font-display">
             "You're welcome to visit anytime — come see why so many families choose Moyglare."
           </p>
         </motion.div>
