@@ -8,7 +8,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import logo from "@/assets/moyglare-logo-new.png";
-import logoWhite from "@/assets/moyglare-logo-white.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,9 +53,9 @@ const Header = () => {
           {/* Logo */}
           <a href="#" className="flex items-center">
             <img 
-              src={isScrolled ? logo : logoWhite} 
+              src={logo} 
               alt="Moyglare Nursing Home" 
-              className="h-24 lg:h-28 w-auto transition-opacity duration-300"
+              className="h-24 lg:h-28 w-auto"
             />
           </a>
 
