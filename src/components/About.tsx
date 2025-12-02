@@ -32,6 +32,8 @@ const About = () => {
                 src={aboutImage}
                 alt="Moyglare Nursing Home building exterior with ivy-covered entrance and gardens"
                 className="w-full aspect-[4/3] object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             {/* Floating card */}

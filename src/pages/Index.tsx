@@ -14,6 +14,42 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import MobileCTA from "@/components/MobileCTA";
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "NursingHome",
+  "name": "Moyglare Nursing Home",
+  "description": "Moyglare Nursing Home provides compassionate, person-centred residential care in Maynooth, County Kildare. HIQA registered with 24/7 nursing care.",
+  "url": "https://www.moyglarenursinghome.ie",
+  "telephone": "+353 1 628 9022",
+  "email": "info@moyglare.ie",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Moyglare Road",
+    "addressLocality": "Maynooth",
+    "addressRegion": "County Kildare",
+    "addressCountry": "IE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "53.3815",
+    "longitude": "-6.5935"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "24/7 Nursing Care" },
+    { "@type": "LocationFeatureSpecification", "name": "Free WiFi" },
+    { "@type": "LocationFeatureSpecification", "name": "Gardens" },
+    { "@type": "LocationFeatureSpecification", "name": "Chapel Services" }
+  ],
+  "numberOfBeds": 53,
+  "medicalSpecialty": ["Dementia Care", "Respite Care", "Long-term Residential Care"]
+};
+
 const Index = () => {
   return (
     <>
@@ -25,11 +61,22 @@ const Index = () => {
         />
         <meta name="keywords" content="nursing home, Maynooth, Kildare, elderly care, residential care, dementia care, respite care, Ireland" />
         <link rel="canonical" href="https://www.moyglarenursinghome.ie" />
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
       </Helmet>
+
+      {/* Skip to main content link for accessibility */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-md"
+      >
+        Skip to main content
+      </a>
 
       <div className="min-h-screen bg-background">
         <Header />
-        <main>
+        <main id="main-content">
           <Hero />
           <About />
           <Services />
