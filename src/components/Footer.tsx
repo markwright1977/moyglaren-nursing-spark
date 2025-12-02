@@ -76,7 +76,14 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold text-[hsl(var(--footer-text))] mb-5 text-lg">Accreditation</h4>
             <p className="text-[hsl(var(--footer-text-muted))] text-sm mb-6 leading-relaxed">
-              HIQA Registered Nursing Home<br />
+              <a 
+                href="https://www.hiqa.ie/areas-we-work/find-a-centre/moyglare-nursing-home" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-[hsl(var(--footer-text))] transition-colors duration-200 underline underline-offset-2"
+              >
+                HIQA Registered Nursing Home
+              </a><br />
               Fully compliant with national standards
             </p>
             
