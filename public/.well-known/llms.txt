@@ -8,7 +8,7 @@ Moyglare Nursing Home is a family-run nursing home located in Maynooth, County K
 
 ## Key Information
 
-- **Location**: Moyglare Road, Maynooth, County Kildare, W23 HF82, Ireland
+- **Location**: Moyglare Road, Maynooth, County Kildare, Ireland
 - **Phone**: +353 1 628 9022
 - **Email**: info@moyglare.ie
 - **Website**: https://www.moyglarenursinghome.ie
@@ -51,8 +51,12 @@ Moyglare Nursing Home actively engages with the local community, hosting visits 
 For enquiries about admissions or to arrange a visit:
 - Phone: +353 1 628 9022
 - Email: info@moyglare.ie
-- Address: Moyglare Road, Maynooth, County Kildare, Ireland
+- Address: Moyglare Road, Maynooth, County Kildare, W23 HF82, Ireland
 
 ## Visiting Hours
 
 Open for visitors 7 days a week. We encourage family and friends to visit regularly.
+
+## HIQA Inspection
+
+View our latest HIQA inspection report: https://www.hiqa.ie/system/files?file=inspectionreports/72-moyglare-nursing-home-27-november-2024.pdf
