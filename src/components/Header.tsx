@@ -51,13 +51,13 @@ const Header = () => {
       <div className="container mx-auto">
         <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo */}
-          <a href="#" className="flex items-center">
+          <a href="#" className={`flex items-center transition-all duration-300 ${
+            !isScrolled ? "bg-white/80 rounded-lg px-2 py-1 backdrop-blur-sm" : ""
+          }`}>
             <img 
               src={logo} 
               alt="Moyglare Nursing Home" 
-              className={`h-24 lg:h-28 w-auto transition-all duration-300 ${
-                !isScrolled ? "drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" : ""
-              }`}
+              className="h-24 lg:h-28 w-auto"
             />
           </a>
 
