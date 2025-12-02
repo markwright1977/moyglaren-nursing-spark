@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
@@ -51,6 +53,21 @@ const structuredData = {
 };
 
 const Index = () => {
+  const location = useLocation();
+
+  // Handle hash scrolling when navigating from other pages
+  useEffect(() => {
+    if (location.hash) {
+      // Small delay to ensure DOM is ready
+      setTimeout(() => {
+        const element = document.querySelector(location.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  }, [location.hash]);
+
   return (
     <>
       <Helmet>
