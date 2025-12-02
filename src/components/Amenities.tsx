@@ -1,9 +1,12 @@
-import bedroomImage from "@/assets/bedroom.jpg";
-import gardenPatioImage from "@/assets/garden-patio.jpg";
-import gardenSeatingImage from "@/assets/garden-seating.jpg";
-import loungeImage from "@/assets/lounge.jpg";
-import diningImage from "@/assets/dining.jpg";
-import entranceHallImage from "@/assets/entrance-hall.jpg";
+import entranceImage from "@/assets/entrance-building.jpg";
+import entranceFlowersImage from "@/assets/entrance-flowers.jpg";
+import entranceHallImage from "@/assets/entrance-hall-new.jpg";
+import diningImage from "@/assets/dining-room.jpg";
+import loungeMainImage from "@/assets/lounge-main.jpg";
+import loungeCozyImage from "@/assets/lounge-cozy.jpg";
+import gardenPatioImage from "@/assets/garden-patio-new.jpg";
+import gardenSeatingImage from "@/assets/garden-seating-new.jpg";
+import waterFeatureImage from "@/assets/water-feature.jpg";
 import { Wifi, Tv, UtensilsCrossed, Flower2, Car, Church } from "lucide-react";
 
 const amenities = [
@@ -16,12 +19,15 @@ const amenities = [
 ];
 
 const galleryImages = [
-  { src: bedroomImage, alt: "Comfortable private bedroom", title: "Private Rooms" },
+  { src: entranceImage, alt: "Moyglare Nursing Home entrance with fountain", title: "Main Entrance" },
+  { src: entranceFlowersImage, alt: "Entrance with beautiful flowers", title: "Building Exterior" },
   { src: diningImage, alt: "Elegant dining room", title: "Dining Room" },
-  { src: loungeImage, alt: "Cozy residents lounge", title: "Residents Lounge" },
+  { src: loungeMainImage, alt: "Spacious main lounge", title: "Main Lounge" },
+  { src: loungeCozyImage, alt: "Cozy residents lounge", title: "Residents Lounge" },
   { src: entranceHallImage, alt: "Welcoming entrance hall", title: "Entrance Hall" },
   { src: gardenPatioImage, alt: "Outdoor patio area", title: "Garden Patio" },
   { src: gardenSeatingImage, alt: "Garden seating area", title: "Garden Seating" },
+  { src: waterFeatureImage, alt: "Garden water feature fountain", title: "Water Feature" },
 ];
 
 const Amenities = () => {
