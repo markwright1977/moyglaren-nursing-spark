@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Heart, Users, Clock } from "lucide-react";
-import entranceImage from "@/assets/entrance-2.jpg";
+import heroImage from "@/assets/moyglare-hero.webp";
 
 const Hero = () => {
   return (
@@ -8,7 +8,7 @@ const Hero = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src={entranceImage}
+          src={heroImage}
           alt="Moyglare Nursing Home building exterior with beautiful gardens"
           className="w-full h-full object-cover"
         />
