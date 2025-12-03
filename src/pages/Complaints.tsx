@@ -49,7 +49,7 @@ const Complaints = () => {
             </h1>
             <p className="text-lg text-muted-foreground mb-4">Moyglare Nursing Home</p>
             
-            <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-10">
+            <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
               <span className="flex items-center gap-1.5">
                 <FileText className="w-4 h-4" />
                 Reference: Schedule 5/20
@@ -57,6 +57,15 @@ const Complaints = () => {
               <span>Effective: 29/9/24</span>
               <span>Review Date: 29/9/26</span>
             </div>
+
+            <a 
+              href="/documents/Complaints_Policy.docx" 
+              download="Moyglare_Complaints_Policy.docx"
+              className="inline-flex items-center gap-2 text-sm bg-secondary/50 hover:bg-secondary/80 text-foreground px-4 py-2 rounded-lg transition-colors mb-10"
+            >
+              <FileText className="w-4 h-4" />
+              Download Full Policy Document
+            </a>
 
             {/* Policy Statement */}
             <div className="bg-secondary/30 rounded-2xl p-6 md:p-8 mb-10">
