@@ -212,7 +212,7 @@ const Privacy = () => {
                   <p className="font-semibold">Moyglare Nursing Home</p>
                   <p>Moyglare Road, Maynooth, Co. Kildare, W23 HF82</p>
                   <p>Phone: +353 1 628 9022</p>
-                  <p>Email: info@moyglare.ie</p>
+                  <p>Email: info@moyglarenursinghome.ie</p>
                 </div>
                 <p className="mt-4">
                   You also have the right to lodge a complaint with the Data Protection Commission at{" "}

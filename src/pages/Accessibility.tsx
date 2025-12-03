@@ -282,7 +282,7 @@ const Accessibility = () => {
                   </div>
                   <div className="flex items-center gap-2 mt-1">
                     <Mail className="w-4 h-4 text-primary" />
-                    <a href="mailto:info@moyglare.ie" className="text-primary hover:underline">info@moyglare.ie</a>
+                    <a href="mailto:info@moyglarenursinghome.ie" className="text-primary hover:underline">info@moyglarenursinghome.ie</a>
                   </div>
                 </div>
                 <p className="mt-4 text-foreground/70">

@@ -25,7 +25,7 @@ Phone: ${formData.phone}
 Message:
 ${formData.message}`;
     
-    window.location.href = `mailto:info@moyglare.ie?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:info@moyglarenursinghome.ie?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -115,8 +115,8 @@ ${formData.message}`;
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                  <a href="mailto:info@moyglare.ie" className="text-muted-foreground hover:text-cta transition-colors">
-                    info@moyglare.ie
+                <a href="mailto:info@moyglarenursinghome.ie" className="text-muted-foreground hover:text-cta transition-colors">
+                    info@moyglarenursinghome.ie
                   </a>
                 </div>
               </div>
