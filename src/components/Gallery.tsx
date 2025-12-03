@@ -4,14 +4,12 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 import entranceHall from '@/assets/entrance-hall-new.jpg';
-import lounge from '@/assets/lounge-main.jpg';
 import dining from '@/assets/dining-room.jpg';
 import garden from '@/assets/garden-patio-new.jpg';
 import gardenSeating from '@/assets/garden-seating-new.jpg';
 
 const images = [
   { src: entranceHall, alt: 'Welcoming entrance hall with comfortable seating and natural light', title: 'Entrance Hall', caption: 'A warm welcome awaits you' },
-  { src: lounge, alt: 'Comfortable lounge area with cozy furniture for residents to relax', title: 'Main Lounge', caption: 'Where friendships flourish' },
   { src: dining, alt: 'Elegant dining room where residents enjoy nutritious meals together', title: 'Dining Room', caption: 'Meals made with care' },
   { src: garden, alt: 'Beautiful garden patio with flowers and seating areas', title: 'Garden Patio', caption: 'Nature at your doorstep' },
   { src: gardenSeating, alt: 'Peaceful garden seating area surrounded by greenery', title: 'Garden Seating', caption: 'Tranquil outdoor spaces' },
