@@ -128,7 +128,7 @@ ${formData.message}`;
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Visiting Hours</h3>
                   <p className="text-muted-foreground">
-                    Daily: 10:00 AM - 8:00 PM
+                    Daily: 10:00 AM - 9:00 PM
                   </p>
                 </div>
               </div>

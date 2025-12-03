@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     question: 'What are the visiting hours?',
-    answer: 'We have flexible visiting hours to accommodate families. Generally, visitors are welcome from 10am to 8pm daily. We encourage families to visit regularly and participate in activities with their loved ones.',
+    answer: 'We have flexible visiting hours to accommodate families. Generally, visitors are welcome from 10am to 9pm daily. We encourage families to visit regularly and participate in activities with their loved ones.',
   },
 ];
 
