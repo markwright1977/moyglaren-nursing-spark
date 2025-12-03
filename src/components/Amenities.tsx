@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import entranceImage from "@/assets/entrance-building.jpg";
 import entranceFlowersImage from "@/assets/entrance-flowers.jpg";
 import entranceHallImage from "@/assets/entrance-hall-new.jpg";
 import diningImage from "@/assets/dining-room.jpg";
@@ -19,7 +18,6 @@ const amenities = [
 ];
 
 const galleryImages = [
-  { src: entranceImage, alt: "Moyglare Nursing Home entrance with fountain", title: "Main Entrance" },
   { src: entranceFlowersImage, alt: "Entrance with beautiful flowers", title: "Building Exterior" },
   { src: diningImage, alt: "Elegant dining room", title: "Dining Room" },
   { src: entranceHallImage, alt: "Welcoming entrance hall", title: "Entrance Hall" },
