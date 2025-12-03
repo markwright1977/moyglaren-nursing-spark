@@ -3,35 +3,35 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Heart, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-// Team member data - replace placeholder images with real photos
+// Team member data - replace placeholder images with real photos when available
 const teamMembers = [
   {
-    name: 'Dr. Sarah Murphy',
-    role: 'Director of Nursing',
+    name: 'Anne Corcoran',
+    role: 'Person in Charge / Director of Nursing',
     quote: 'Every resident deserves to feel valued and cared for every single day.',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face',
-    alt: 'Dr. Sarah Murphy, Director of Nursing at Moyglare, smiling warmly',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face',
+    alt: 'Anne Corcoran, Director of Nursing at Moyglare Nursing Home',
   },
   {
-    name: 'Mary O\'Brien',
-    role: 'Clinical Nurse Manager',
+    name: 'Christine Espinas',
+    role: 'Clinical Nurse Manager 2',
     quote: 'I love making every resident\'s day brighter with a kind word and genuine care.',
-    image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop&crop=face',
-    alt: 'Mary O\'Brien, Clinical Nurse Manager, in her nursing uniform',
+    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face',
+    alt: 'Christine Espinas, Clinical Nurse Manager 2',
   },
   {
-    name: 'Patrick Kelly',
-    role: 'Senior Care Assistant',
+    name: 'Anupama Jacob',
+    role: 'Clinical Nurse Manager 1',
     quote: 'Building meaningful connections with residents is the most rewarding part of my work.',
-    image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=400&fit=crop&crop=face',
-    alt: 'Patrick Kelly, Senior Care Assistant, providing compassionate care',
+    image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop&crop=face',
+    alt: 'Anupama Jacob, Clinical Nurse Manager 1',
   },
   {
-    name: 'Aoife Brennan',
-    role: 'Activities Coordinator',
-    quote: 'Seeing our residents laugh and engage fills my heart with joy every day.',
-    image: 'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=400&fit=crop&crop=face',
-    alt: 'Aoife Brennan, Activities Coordinator, organizing engaging activities',
+    name: 'Damian Doyle',
+    role: 'Lead Care Assistant',
+    quote: 'Seeing our residents happy and comfortable is the most rewarding part of my day.',
+    image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=400&fit=crop&crop=face',
+    alt: 'Damian Doyle, Lead Care Assistant',
   },
 ];
 
