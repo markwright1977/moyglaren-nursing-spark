@@ -23,7 +23,7 @@ const structuredData = {
   "description": "Moyglare Nursing Home provides compassionate, person-centred residential care in Maynooth, County Kildare. HIQA registered with 24/7 nursing care.",
   "url": "https://www.moyglarenursinghome.ie",
   "telephone": "+353 1 628 9022",
-  "email": "info@moyglare.ie",
+  "email": "info@moyglarenursinghome.ie",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Moyglare Road",

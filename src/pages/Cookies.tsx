@@ -189,7 +189,7 @@ const Cookies = () => {
                   <p className="font-semibold text-foreground">Moyglare Nursing Home</p>
                   <p className="text-foreground/70">Moyglare Road, Maynooth, Co. Kildare, W23 HF82</p>
                   <p className="text-foreground/70">Phone: <a href="tel:+35316289022" className="text-primary hover:underline">+353 1 628 9022</a></p>
-                  <p className="text-foreground/70">Email: <a href="mailto:info@moyglare.ie" className="text-primary hover:underline">info@moyglare.ie</a></p>
+                  <p className="text-foreground/70">Email: <a href="mailto:info@moyglarenursinghome.ie" className="text-primary hover:underline">info@moyglarenursinghome.ie</a></p>
                 </div>
               </section>
             </div>
