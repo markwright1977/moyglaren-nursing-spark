@@ -1,8 +1,15 @@
 import AnimatedSection from './AnimatedSection';
 import ceilecarelogo from '@/assets/ceilecare-logo.png';
 import nhilogo from '@/assets/nhi-logo.png';
+import hiqalogo from '@/assets/hiqa-logo.png';
 
 const accreditations = [
+  {
+    name: 'HIQA',
+    logo: hiqalogo,
+    description: 'Registered and regulated by the Health Information and Quality Authority (HIQA).',
+    alt: 'HIQA - Health Information and Quality Authority logo',
+  },
   {
     name: 'CéileCare',
     logo: ceilecarelogo,
