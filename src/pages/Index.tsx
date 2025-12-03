@@ -10,6 +10,7 @@ import Amenities from "@/components/Amenities";
 import MidPageHero from "@/components/MidPageHero";
 import Community from "@/components/Community";
 import Team from "@/components/Team";
+import Accreditations from "@/components/Accreditations";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
@@ -102,6 +103,7 @@ const Index = () => {
           <MidPageHero />
           <Community />
           <Team />
+          <Accreditations />
           <Testimonials />
           <FAQ />
           <Contact />
