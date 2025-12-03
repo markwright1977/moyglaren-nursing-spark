@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { Heart, Play, Stethoscope, HeartPulse, Activity, HandHeart } from 'lucide-react';
+import { Heart, Play, Stethoscope, HeartPulse, Activity, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LucideIcon } from 'lucide-react';
 
@@ -31,9 +31,9 @@ const teamMembers: {
   },
   {
     name: 'Damian Doyle',
-    role: 'Lead Care Assistant',
+    role: 'Owner',
     quote: 'Seeing our residents happy and comfortable is the most rewarding part of my day.',
-    Icon: HandHeart,
+    Icon: Building2,
   },
 ];
 
