@@ -64,7 +64,7 @@ const Team = () => {
         </motion.div>
 
         {/* Team Member Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto mb-8">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
@@ -95,6 +95,16 @@ const Team = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Family Heritage Statement */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={isVisible ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.7 }}
+          className="text-center text-muted-foreground italic mb-16"
+        >
+          Moyglare Nursing Home — owned and operated by the Doyle Family for over 30 years.
+        </motion.p>
 
         {/* Group Photo / Video Section */}
         <motion.div
