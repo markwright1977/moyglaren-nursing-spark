@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Button } from '@/components/ui/button';
-import loungeCozy from '@/assets/lounge-cozy.jpg';
+import loungeWarm from '@/assets/lounge-warm.png';
 
 const MidPageHero = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -11,7 +11,7 @@ const MidPageHero = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src={loungeCozy}
+          src={loungeWarm}
           alt="Comfortable lounge area at Moyglare Nursing Home"
           className="w-full h-full object-cover"
           loading="lazy"
