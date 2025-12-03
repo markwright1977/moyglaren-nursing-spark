@@ -4,8 +4,6 @@ import entranceImage from "@/assets/entrance-building.jpg";
 import entranceFlowersImage from "@/assets/entrance-flowers.jpg";
 import entranceHallImage from "@/assets/entrance-hall-new.jpg";
 import diningImage from "@/assets/dining-room.jpg";
-import loungeMainImage from "@/assets/lounge-main.jpg";
-import loungeCozyImage from "@/assets/lounge-cozy.jpg";
 import gardenPatioImage from "@/assets/garden-patio-new.jpg";
 import gardenSeatingImage from "@/assets/garden-seating-new.jpg";
 import waterFeatureImage from "@/assets/water-feature.jpg";
@@ -24,8 +22,6 @@ const galleryImages = [
   { src: entranceImage, alt: "Moyglare Nursing Home entrance with fountain", title: "Main Entrance" },
   { src: entranceFlowersImage, alt: "Entrance with beautiful flowers", title: "Building Exterior" },
   { src: diningImage, alt: "Elegant dining room", title: "Dining Room" },
-  { src: loungeMainImage, alt: "Spacious main lounge", title: "Main Lounge" },
-  { src: loungeCozyImage, alt: "Cozy residents lounge", title: "Residents Lounge" },
   { src: entranceHallImage, alt: "Welcoming entrance hall", title: "Entrance Hall" },
   { src: gardenPatioImage, alt: "Outdoor patio area", title: "Garden Patio" },
   { src: gardenSeatingImage, alt: "Garden seating area", title: "Garden Seating" },
