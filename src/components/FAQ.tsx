@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: 'What is included in the fees?',
-    answer: 'Our fees include accommodation in a private or shared room, all meals and snacks, 24-hour nursing care, activities and entertainment, laundry services, and access to all communal facilities. Some additional services may incur extra charges.',
+    answer: 'Our fees include accommodation in a private or shared room, all meals and snacks, 24-hour nursing care, laundry services, and access to all communal facilities. Some additional services may incur extra charges.',
   },
   {
     question: 'Can residents bring personal belongings?',
