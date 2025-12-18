@@ -1,10 +1,17 @@
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Heart, Users, Music, Trophy, MicVocal } from "lucide-react";
+import { Heart, Users, Music, Trophy, MicVocal, ChevronLeft, ChevronRight } from "lucide-react";
 import communityImage from "@/assets/community-ty-students.jpg";
 import musicImage from "@/assets/community-music-students.jpg";
 import gaaImage from "@/assets/community-gaa-u12.jpg";
 import choirImage from "@/assets/community-boys-choir.jpg";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const communityPosts = [
   {
@@ -63,46 +70,60 @@ const Community = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
-          {communityPosts.map((post, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 24 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 + index * 0.1, ease: "easeOut" }}
-            >
-              <div className="bg-card rounded-xl shadow-elevated overflow-hidden h-full flex flex-col">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={post.image}
-                    alt={post.alt}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <post.icon className="w-5 h-5 text-primary" />
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          className="max-w-5xl mx-auto"
+        >
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {communityPosts.map((post, index) => (
+                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/2">
+                  <div className="bg-card rounded-xl shadow-elevated overflow-hidden h-full flex flex-col">
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img
+                        src={post.image}
+                        alt={post.alt}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                      />
                     </div>
-                    <div>
-                      <p className="font-semibold text-foreground">Community Involvement</p>
-                      <p className="text-sm text-muted-foreground">{post.title}</p>
+                    <div className="p-6 flex flex-col flex-1">
+                      <div className="flex items-center gap-2 mb-4">
+                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                          <post.icon className="w-5 h-5 text-primary" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-foreground">Community Involvement</p>
+                          <p className="text-sm text-muted-foreground">{post.title}</p>
+                        </div>
+                      </div>
+                      <p className="text-foreground leading-relaxed flex-1">
+                        {post.text}
+                      </p>
+                      <div className="mt-6 pt-4 border-t border-border flex items-center gap-2 text-muted-foreground">
+                        <Heart className="w-4 h-4" />
+                        <span className="text-sm">{post.tagline}</span>
+                      </div>
                     </div>
                   </div>
-                  <p className="text-foreground leading-relaxed flex-1">
-                    {post.text}
-                  </p>
-                  <div className="mt-6 pt-4 border-t border-border flex items-center gap-2 text-muted-foreground">
-                    <Heart className="w-4 h-4" />
-                    <span className="text-sm">{post.tagline}</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-center gap-4 mt-8">
+              <CarouselPrevious className="static translate-y-0 bg-primary/10 hover:bg-primary/20 border-none text-primary" />
+              <CarouselNext className="static translate-y-0 bg-primary/10 hover:bg-primary/20 border-none text-primary" />
+            </div>
+          </Carousel>
+        </motion.div>
       </div>
     </section>
   );
