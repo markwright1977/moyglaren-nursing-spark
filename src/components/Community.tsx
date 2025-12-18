@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Heart, Users, Music, Trophy } from "lucide-react";
+import { Heart, Users, Music, Trophy, MicVocal } from "lucide-react";
 import communityImage from "@/assets/community-ty-students.jpg";
 import musicImage from "@/assets/community-music-students.jpg";
 import gaaImage from "@/assets/community-gaa-u12.jpg";
+import choirImage from "@/assets/community-boys-choir.jpg";
 
 const communityPosts = [
   {
@@ -13,6 +14,14 @@ const communityPosts = [
     icon: Trophy,
     text: "We were delighted to welcome the Maynooth GAA Boys U12 team to our nursing home. Thank you so much for joining us — these young lads are a credit to their parents and to the GAA club in Maynooth. Their visit brought such joy to our residents!",
     tagline: "Young sportsmen spreading Christmas cheer"
+  },
+  {
+    image: choirImage,
+    alt: "Maynooth Boys School Choir singing Christmas Carols at Moyglare Nursing Home",
+    title: "Maynooth Boys School Choir",
+    icon: MicVocal,
+    text: "The children from Maynooth Boys School Choir came down to sing Christmas Carols for everyone. We're so grateful to our local groups and their teachers who are always welcome here. We really appreciate all you do — your beautiful singing brought such festive cheer to our residents!",
+    tagline: "Filling our home with Christmas carols"
   },
   {
     image: communityImage,
@@ -54,7 +63,7 @@ const Community = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {communityPosts.map((post, index) => (
             <motion.div
               key={index}
