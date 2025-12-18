@@ -1,10 +1,19 @@
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Heart, Users, Music } from "lucide-react";
+import { Heart, Users, Music, Trophy } from "lucide-react";
 import communityImage from "@/assets/community-ty-students.jpg";
 import musicImage from "@/assets/community-music-students.jpg";
+import gaaImage from "@/assets/community-gaa-u12.jpg";
 
 const communityPosts = [
+  {
+    image: gaaImage,
+    alt: "Maynooth GAA Boys U12 team visiting Moyglare Nursing Home at Christmas",
+    title: "Maynooth GAA U12 Visit",
+    icon: Trophy,
+    text: "We were delighted to welcome the Maynooth GAA Boys U12 team to our nursing home. Thank you so much for joining us — these young lads are a credit to their parents and to the GAA club in Maynooth. Their visit brought such joy to our residents!",
+    tagline: "Young sportsmen spreading Christmas cheer"
+  },
   {
     image: communityImage,
     alt: "TY students from local school visiting Moyglare Nursing Home for community involvement activities",
@@ -45,7 +54,7 @@ const Community = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {communityPosts.map((post, index) => (
             <motion.div
               key={index}
