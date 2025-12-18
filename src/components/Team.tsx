@@ -82,7 +82,7 @@ const Team = () => {
                   <img 
                     src={member.image} 
                     alt={member.name}
-                    className="w-full h-full object-cover object-top"
+                    className={`w-full h-full object-cover ${member.name === 'Anne Corcoran' ? 'scale-150 object-[center_25%]' : 'object-top'}`}
                   />
                 ) : member.Icon ? (
                   <member.Icon className="w-10 h-10 text-primary" />
