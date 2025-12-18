@@ -1,27 +1,30 @@
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { Heart, Play, Stethoscope, HeartPulse, Activity, Building2 } from 'lucide-react';
+import { Heart, Play, Activity, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LucideIcon } from 'lucide-react';
+import annePhoto from '@/assets/team-anne.jpg';
+import christinePhoto from '@/assets/team-christine.jpg';
 
-// Team member data - replace icons with real photos when available
+// Team member data
 const teamMembers: {
   name: string;
   role: string;
   quote: string;
-  Icon: LucideIcon;
+  image?: string;
+  Icon?: LucideIcon;
 }[] = [
   {
     name: 'Anne Corcoran',
     role: 'Person in Charge / Director of Nursing',
     quote: 'Every resident deserves to feel valued and cared for every single day.',
-    Icon: Stethoscope,
+    image: annePhoto,
   },
   {
     name: 'Christine Espinas',
     role: 'Clinical Nurse Manager 2',
     quote: 'I love making every resident\'s day brighter with a kind word and genuine care.',
-    Icon: HeartPulse,
+    image: christinePhoto,
   },
   {
     name: 'Anupama Jacob',
@@ -73,9 +76,17 @@ const Team = () => {
               transition={{ duration: 0.5, delay: index * 0.15 }}
               className="group bg-white rounded-2xl p-6 text-center shadow-soft hover:shadow-elevated transition-all duration-300"
             >
-              {/* Icon */}
-              <div className="relative mb-5 mx-auto w-24 h-24 rounded-xl bg-[hsl(var(--pale-sage))] flex items-center justify-center shadow-card transition-all duration-300 group-hover:shadow-elevated group-hover:scale-105">
-                <member.Icon className="w-10 h-10 text-primary" />
+              {/* Photo or Icon */}
+              <div className="relative mb-5 mx-auto w-24 h-24 rounded-xl bg-[hsl(var(--pale-sage))] flex items-center justify-center shadow-card transition-all duration-300 group-hover:shadow-elevated group-hover:scale-105 overflow-hidden">
+                {member.image ? (
+                  <img 
+                    src={member.image} 
+                    alt={member.name}
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : member.Icon ? (
+                  <member.Icon className="w-10 h-10 text-primary" />
+                ) : null}
               </div>
               
               {/* Name */}
